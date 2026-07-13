@@ -250,25 +250,7 @@ investorReadiness: {
   ],
   fundingFit: "Better suited for grants, hackathons or angel validation before VC funding"
 },
-startupCanvas: {
-  problem: [
-    "Users lack a focused solution for the stated problem",
-    "Existing alternatives are fragmented or generic",
-    "Early users need a faster way to achieve the outcome"
-  ],
-  solution: [
-    "Build a focused MVP around the core workflow",
-    "Use AI-assisted automation where it reduces user effort",
-    "Provide a simple dashboard for tracking outcomes"
-  ],
-  uniqueValue: "A focused, fast, and user-friendly startup solution designed for the target segment.",
-  unfairAdvantage: "Early focus on a specific niche and rapid iteration with user feedback.",
-  customerSegments: ["Early adopters", "Target user niche", "Small teams or individuals"],
-  channels: ["LinkedIn", "College communities", "Founder groups", "Direct outreach"],
-  revenueStreams: ["Paid plans", "Premium reports/features", "Team workspace"],
-  costStructure: ["Development", "Hosting", "AI/API usage", "Marketing"],
-  keyMetrics: ["Activation rate", "Retention", "Conversion rate", "Report generation count"]
-},
+
 competitorMatrix: {
   features: ["Core Workflow", "AI Assistance", "Analytics", "Export", "Customization"],
   competitors: [
@@ -420,5 +402,152 @@ founderChecklist:[
 ]
 
 },
+technicalBlueprint: {
+  architecture: {
+    frontend:
+      "Next.js with TypeScript for a responsive and maintainable web interface.",
+    backend:
+      "Next.js API routes or a Node.js service for application logic and external API communication.",
+    database:
+      "Supabase PostgreSQL for users, startup ideas, reports and saved research.",
+    authentication:
+      "Supabase Authentication using email and password-based user sessions.",
+    aiLayer:
+      "Google Gemini API for startup analysis, report generation and Copilot responses.",
+    storage:
+      "Supabase Storage when the product needs to store documents, images or exported files.",
+    deployment:
+      "Vercel for the Next.js application with Supabase as the managed backend.",
+  },
+
+  folderStructure: [
+    "app/",
+    "app/api/",
+    "components/",
+    "components/dashboard/",
+    "components/report/",
+    "lib/",
+    "types/",
+    "public/",
+    "supabase/",
+  ],
+
+  apis: [
+    {
+      endpoint: "POST /api/analyze",
+      description:
+        "Accepts startup idea details and generates the complete startup intelligence report.",
+      payload:
+        "{ idea, users, problem, industry, budget, goal }",
+      auth: "Authenticated user",
+    },
+    {
+      endpoint: "POST /api/copilot",
+      description:
+        "Answers follow-up questions using the generated startup report as context.",
+      payload:
+        "{ report, question, messages }",
+      auth: "Authenticated user",
+    },
+    {
+      endpoint: "POST /api/research-papers",
+      description:
+        "Searches trusted academic sources for papers related to the startup idea.",
+      payload:
+        "{ idea, industry, topic }",
+      auth: "Authenticated user",
+    },
+  ],
+
+  databaseTables: [
+    {
+      name: "profiles",
+      fields: [
+        "id",
+        "full_name",
+        "theme",
+        "email_updates",
+        "weekly_insights",
+        "created_at",
+        "updated_at",
+      ],
+    },
+    {
+      name: "reports",
+      fields: [
+        "id",
+        "user_id",
+        "title",
+        "idea",
+        "report",
+        "favorite",
+        "created_at",
+        "updated_at",
+      ],
+    },
+  ],
+
+  developmentPhases: [
+    {
+      phase: "Phase 1: Foundation",
+      tasks: [
+        "Set up the application structure",
+        "Configure authentication",
+        "Create the database schema",
+        "Connect environment variables",
+      ],
+    },
+    {
+      phase: "Phase 2: Core Intelligence",
+      tasks: [
+        "Build the startup idea wizard",
+        "Integrate Gemini report generation",
+        "Add Tavily market research",
+        "Render dynamic report sections",
+      ],
+    },
+    {
+      phase: "Phase 3: Workspace Features",
+      tasks: [
+        "Save generated reports",
+        "Add report history",
+        "Build the AI Copilot",
+        "Add the Research Hub",
+      ],
+    },
+    {
+      phase: "Phase 4: Production",
+      tasks: [
+        "Test authentication and report generation",
+        "Run a production build",
+        "Deploy to Vercel",
+        "Configure production environment variables",
+      ],
+    },
+  ],
+
+  deploymentPlan: {
+    frontend:
+      "Deploy the Next.js application through Vercel using the connected GitHub repository.",
+    backend:
+      "Run Next.js API routes as Vercel serverless functions.",
+    database:
+      "Use the existing Supabase PostgreSQL project with Row Level Security policies.",
+    storage:
+      "Use Supabase Storage for future file upload and generated asset requirements.",
+  },
+
+  workflow: [
+    "User creates an account or logs in.",
+    "User submits a startup idea through the guided wizard.",
+    "Tavily gathers relevant market and competitor research.",
+    "Gemini generates the complete startup intelligence report.",
+    "The report is displayed and saved in Supabase.",
+    "The user explores market, competitors, technical blueprint and investor sections.",
+    "The user asks follow-up questions through Launch Lens Copilot.",
+    "The Research Hub discovers academic papers related to the startup idea.",
+  ],
+},
+
   };
 }
