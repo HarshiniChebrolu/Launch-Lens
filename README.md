@@ -3,17 +3,13 @@
 > **Transform startup ideas into investor-ready ventures with AI-powered validation, market intelligence, competitor analysis, technical blueprints, research paper discovery, and strategic planning.**
 
 <p align="center">
-  <img src="public/logo.png" width="120" alt="Launch Lens Logo"/>
-</p>
-
-<p align="center">
   <b>AI Startup Intelligence Platform</b><br>
   Helping founders validate ideas before they build.
 </p>
 
 ---
 
-## 🌟 Overview
+# 🌟 Overview
 
 Every year, thousands of startup ideas fail—not because the ideas are bad, but because founders lack structured validation, technical planning, market research, and strategic direction.
 
@@ -23,9 +19,10 @@ Instead of switching between multiple tools for market research, competitor anal
 
 ---
 
-## ✨ Key Features
+# ✨ Key Features
 
-### 🧠 AI Startup Intelligence
+## 🧠 AI Startup Intelligence
+
 - Executive Summary Generation
 - Startup Validation Score
 - Business Readiness Assessment
@@ -33,7 +30,8 @@ Instead of switching between multiple tools for market research, competitor anal
 
 ---
 
-### 📈 Market Intelligence
+## 📈 Market Intelligence
+
 - Live Market Research
 - Industry Trends
 - Market Opportunities
@@ -41,7 +39,8 @@ Instead of switching between multiple tools for market research, competitor anal
 
 ---
 
-### 🏆 Competitor Analysis
+## 🏆 Competitor Analysis
+
 - Competitor Discovery
 - SWOT Comparison
 - Competitor Matrix
@@ -49,8 +48,9 @@ Instead of switching between multiple tools for market research, competitor anal
 
 ---
 
-### 🏗 Technical Blueprint
-Automatically generates:
+## 🏗 Technical Blueprint
+
+Automatically generates
 
 - System Architecture
 - Recommended Tech Stack
@@ -62,7 +62,7 @@ Automatically generates:
 
 ---
 
-### 💰 Business Strategy
+## 💰 Business Strategy
 
 Generate
 
@@ -74,7 +74,7 @@ Generate
 
 ---
 
-### 🎯 Investor Readiness
+## 🎯 Investor Readiness
 
 Evaluate
 
@@ -86,7 +86,7 @@ Evaluate
 
 ---
 
-### 🎨 Branding Studio
+## 🎨 Branding Studio
 
 Generate
 
@@ -99,7 +99,7 @@ Generate
 
 ---
 
-### 📚 Research Hub
+## 📚 Research Hub
 
 Discover academic research from trusted sources including
 
@@ -113,152 +113,266 @@ Discover academic research from trusted sources including
 
 ---
 
-### 🤖 AI Copilot
+## 🤖 AI Copilot
 
 Ask questions about your startup such as
 
 - Improve my MVP
-- Reduce development cost
-- Suggest marketing strategy
-- Investor questions
-- Technical improvements
+- Reduce Development Cost
+- Suggest Marketing Strategy
+- Investor Questions
+- Technical Improvements
 
 ---
 
-### 📄 Export
+## 📄 Export
 
 Generate downloadable startup reports for future reference.
 
 ---
 
-## ⚙ Tech Stack
+# ⚙️ Tech Stack
 
 | Category | Technologies |
-|-----------|--------------|
+|----------|--------------|
 | Frontend | Next.js 14, React, TypeScript |
 | Styling | CSS3 |
 | Backend | Next.js API Routes |
 | Database | Supabase |
 | Authentication | Supabase Auth |
-| AI | Google Gemini |
-| Market Research | Tavily API |
+| AI Engine | Google Gemini |
+| Market Intelligence | Tavily API |
 | Deployment | Vercel |
 
 ---
 
-## 🏛 Platform Workflow
+# 🏛 Platform Workflow
 
 ```text
 Startup Idea
       │
       ▼
- AI Analysis
+AI Analysis
       │
       ▼
- Market Research
+Market Research
       │
       ▼
- Competitor Analysis
+Competitor Analysis
       │
       ▼
- Business Strategy
+Business Strategy
       │
       ▼
- Technical Blueprint
+Technical Blueprint
       │
       ▼
- Investor Readiness
+Investor Readiness
       │
       ▼
- Research Hub
+Research Hub
       │
       ▼
- Final Startup Intelligence Report
+Final Startup Intelligence Report
 ```
 
 ---
 
-## 📸 Screenshots
+# 📸 Screenshots
 
-> *(Add screenshots after deployment.)*
+> *(Update this section after deployment.)*
 
 - Landing Page
 - Dashboard
 - AI Startup Report
-- Technical Blueprint
 - Market Intelligence
+- Competitor Analysis
+- Technical Blueprint
 - Research Hub
 - AI Copilot
 
 ---
 
-## 🚀 Getting Started
+# 🚀 Getting Started
 
-Clone the repository
+## 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/HarshiniChebrolu/Launch-Lens.git
+cd Launch-Lens
 ```
 
-Install dependencies
+---
+
+## 2️⃣ Install Dependencies
 
 ```bash
 npm install
 ```
 
-Create a `.env.local`
+---
+
+# 🔑 API Configuration
+
+Launch Lens requires the following APIs to function correctly.
+
+---
+
+## 🤖 Google Gemini API
+
+Used for
+
+- AI Startup Analysis
+- Executive Summary
+- Technical Blueprint
+- AI Copilot
+- Branding
+- Business Strategy
+- Investor Insights
+- Pitch Generation
+
+### Get your API Key
+
+1. Visit https://aistudio.google.com/app/apikey
+2. Sign in using your Google account.
+3. Click **Create API Key**.
+4. Copy the generated key.
+
+Add it to
+
+```env
+GEMINI_API_KEY=YOUR_GEMINI_API_KEY
+```
+
+---
+
+## 🔍 Tavily Search API
+
+Used for
+
+- Live Market Research
+- Competitor Discovery
+- Research Paper Discovery
+
+### Get your API Key
+
+1. Visit https://app.tavily.com
+2. Create a free account.
+3. Open Dashboard.
+4. Copy your API Key.
+
+Add it to
+
+```env
+TAVILY_API_KEY=YOUR_TAVILY_API_KEY
+```
+
+---
+
+## 🗄 Supabase
+
+Used for
+
+- Authentication
+- Database
+- Report Storage
+
+### Create a Project
+
+1. Visit https://supabase.com
+2. Create a new project.
+3. Open
+
+```
+Project Settings → API
+```
+
+4. Copy
+
+- Project URL
+- Anon Public Key
+
+Add them to
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=YOUR_PROJECT_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_ANON_KEY
+```
+
+---
+
+# 📄 Environment File
+
+Create a file named
+
+```
+.env.local
+```
+
+Paste
 
 ```env
 NEXT_PUBLIC_SUPABASE_URL=
+
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
+
 GEMINI_API_KEY=
+
 TAVILY_API_KEY=
 ```
 
-Run locally
+---
+
+# ▶️ Run Locally
 
 ```bash
 npm run dev
 ```
 
----
+Open
 
-## 💡 Why Launch Lens?
-
-Unlike traditional startup generators, Launch Lens combines multiple AI-driven capabilities into one platform.
-
-✔ Startup Validation
-
-✔ Market Intelligence
-
-✔ Competitor Analysis
-
-✔ Technical Planning
-
-✔ Research Paper Discovery
-
-✔ Investor Readiness
-
-✔ Business Strategy
-
-✔ AI Copilot Assistance
+```
+http://localhost:3000
+```
 
 ---
 
-## 🔮 Future Roadmap
+# 💡 Why Launch Lens?
+
+Unlike traditional startup generators, Launch Lens combines multiple AI-powered capabilities into one intelligent platform.
+
+✅ Startup Validation
+
+✅ Market Intelligence
+
+✅ Competitor Analysis
+
+✅ Technical Blueprint Generation
+
+✅ Business Strategy
+
+✅ Research Paper Discovery
+
+✅ Investor Readiness
+
+✅ AI Copilot Assistance
+
+---
+
+# 🔮 Future Roadmap
 
 - AI Pitch Deck Designer
 - Financial Forecasting
-- Interactive System Architecture Diagrams
+- Interactive System Architecture
 - Team Collaboration Workspace
 - AI Logo Generator
 - Startup Risk Prediction
-- One-click GitHub Boilerplate Generator
+- GitHub Boilerplate Generator
 - Multi-language Support
 
 ---
 
-## 👩‍💻 Developed By
+# 👩‍💻 Developed By
 
 **Chebrolu Harshini**
 
@@ -266,16 +380,16 @@ B.Tech Computer Science Engineering
 
 AI • Machine Learning • Full Stack Development
 
-Passionate about building intelligent products that solve real-world problems.
+Passionate about building intelligent software that solves real-world problems through Artificial Intelligence.
 
 ---
 
-## ⭐ Support
+# ⭐ Support
 
-If you found this project interesting, consider giving it a ⭐ on GitHub.
+If you found this project useful, consider giving it a ⭐ on GitHub.
 
-It helps others discover the project and motivates future development.
+It motivates future development and helps others discover Launch Lens.
 
 ---
 
-> **Launch Lens — From Idea to Investor-Ready Intelligence.**
+> **🚀 Launch Lens — From Idea to Investor-Ready Intelligence.**
