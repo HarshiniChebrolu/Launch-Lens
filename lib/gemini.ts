@@ -1,6 +1,57 @@
 import { IdeaInput } from "@/types/report";
 import { getGeminiModel } from "@/lib/gemini-client";
+async function generateWithRetry(
+  model: any,
+  prompt: string,
+  attempts = 2
+) {
+  let lastError: unknown;
 
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    try {
+      const request = model.generateContent(prompt);
+
+      const timeout = new Promise<never>((_, reject) => {
+        setTimeout(() => {
+          reject(new Error("Gemini request timed out after 45 seconds."));
+        }, 45000);
+      });
+
+      return await Promise.race([request, timeout]);
+    } catch (error) {
+      lastError = error;
+
+      console.error(
+        `Gemini report attempt ${attempt}/${attempts} failed:`,
+        error
+      );
+
+      if (attempt < attempts) {
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+      }
+    }
+  }
+
+  throw lastError instanceof Error
+    ? lastError
+    : new Error("Gemini report generation failed.");
+}
+
+function extractJson(text: string) {
+  const cleaned = text
+    .replace(/```json/gi, "")
+    .replace(/```/g, "")
+    .trim();
+
+  const firstBrace = cleaned.indexOf("{");
+  const lastBrace = cleaned.lastIndexOf("}");
+
+  if (firstBrace === -1 || lastBrace === -1 || lastBrace <= firstBrace) {
+    throw new Error("Gemini response did not contain a valid JSON object.");
+  }
+
+  return cleaned.slice(firstBrace, lastBrace + 1);
+}
 export async function generateReportWithGemini(input: IdeaInput, research: any) {
   const model = getGeminiModel("report");
 
@@ -376,13 +427,17 @@ Return this exact JSON shape:
 }
 `;
 
-  const result = await model.generateContent(prompt);
-  const text = result.response.text();
+  const result = await generateWithRetry(model, prompt);
+const text = result.response.text();
 
-  const cleaned = text
-    .replace(/```json/g, "")
-    .replace(/```/g, "")
-    .trim();
+const jsonText = extractJson(text);
 
-  return JSON.parse(cleaned);
+try {
+  return JSON.parse(jsonText);
+} catch (error) {
+  console.error("Gemini returned invalid JSON:", jsonText);
+  throw new Error(
+    "Gemini returned an invalid report format. The fallback report will be used."
+  );
+}
 }

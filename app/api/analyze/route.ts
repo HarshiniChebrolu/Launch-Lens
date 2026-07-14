@@ -1,28 +1,68 @@
 import { NextResponse } from "next/server";
 import { buildStartupReport } from "@/lib/report-builder";
+import { buildFallbackReport } from "@/lib/fallback";
+import { IdeaInput } from "@/types/report";
+
+export const maxDuration = 60;
+export const dynamic = "force-dynamic";
 
 export async function POST(req: Request) {
-  try {
-    console.log("GEMINI exists:", Boolean(process.env.GEMINI_API_KEY));
-    console.log("TAVILY exists:", Boolean(process.env.TAVILY_API_KEY));
+  let input: IdeaInput | null = null;
 
-    const input = await req.json();
+  try {
+    input = (await req.json()) as IdeaInput;
+
+    if (
+      !input.idea?.trim() ||
+      !input.users?.trim() ||
+      !input.problem?.trim() ||
+      !input.industry?.trim() ||
+      !input.budget?.trim() ||
+      !input.goal?.trim()
+    ) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Please complete all startup idea fields.",
+        },
+        { status: 400 }
+      );
+    }
+
     const report = await buildStartupReport(input);
 
-    console.log("TECHNICAL BLUEPRINT:");
-    console.log(JSON.stringify(report.technicalBlueprint, null, 2));
+    if (!report) {
+      throw new Error("Report generation returned no data.");
+    }
 
     return NextResponse.json({
       success: true,
       report,
+      source: "ai",
     });
-  } catch (error: any) {
+  } catch (error) {
     console.error("Analyze API error:", error);
+
+    if (input) {
+      try {
+        const fallbackReport = buildFallbackReport(input);
+
+        return NextResponse.json({
+          success: true,
+          report: fallbackReport,
+          source: "fallback",
+          warning:
+            "Live AI analysis was temporarily unavailable. A reliable startup report was generated instead.",
+        });
+      } catch (fallbackError) {
+        console.error("Fallback generation failed:", fallbackError);
+      }
+    }
 
     return NextResponse.json(
       {
         success: false,
-        error: error?.message || "Failed to generate report",
+        error: "Could not process this startup idea. Please try again.",
       },
       { status: 500 }
     );

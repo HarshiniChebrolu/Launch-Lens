@@ -1,25 +1,28 @@
 import { IdeaInput, StartupReport } from "@/types/report";
 import { researchWithTavily } from "./tavily";
 import { generateReportWithGemini } from "./gemini";
+import { buildFallbackReport } from "./fallback";
 
 function missing(section: unknown) {
-  if (!section) return true;
-  if (Array.isArray(section)) return section.length === 0;
-  if (typeof section === "object") return Object.keys(section as object).length === 0;
+  if (section === null || section === undefined) return true;
+
+  if (Array.isArray(section)) {
+    return section.length === 0;
+  }
+
+  if (typeof section === "object") {
+    return Object.keys(section as object).length === 0;
+  }
+
+  if (typeof section === "string") {
+    return section.trim().length === 0;
+  }
+
   return false;
 }
 
-export async function buildStartupReport(input: IdeaInput): Promise<StartupReport> {
-  const research = await researchWithTavily(input);
-  const aiReport = await generateReportWithGemini(input, research);
-
-  if (!aiReport) {
-    throw new Error(
-      "AI report generation failed. Check GEMINI_API_KEY, Tavily key, and model access."
-    );
-  }
-
-  const required = [
+function validateReport(report: StartupReport) {
+  const required: Array<keyof StartupReport> = [
     "title",
     "summary",
     "executiveSummary",
@@ -44,10 +47,45 @@ export async function buildStartupReport(input: IdeaInput): Promise<StartupRepor
   ];
 
   for (const key of required) {
-    if (missing(aiReport[key])) {
-      throw new Error(`AI response missing required section: ${key}`);
+    if (missing(report[key])) {
+      throw new Error(`AI response missing required section: ${String(key)}`);
     }
   }
+}
 
-  return aiReport;
+export async function buildStartupReport(
+  input: IdeaInput
+): Promise<StartupReport> {
+  let research: unknown = {
+    available: false,
+    results: [],
+  };
+
+  try {
+    research = await researchWithTavily(input);
+  } catch (error) {
+    console.error(
+      "Tavily research failed. Continuing without live research:",
+      error
+    );
+  }
+
+  try {
+    const aiReport = await generateReportWithGemini(input, research);
+
+    if (!aiReport) {
+      throw new Error("Gemini returned no startup report.");
+    }
+
+    validateReport(aiReport as StartupReport);
+
+    return aiReport as StartupReport;
+  } catch (error) {
+    console.error(
+      "AI report generation or validation failed. Using fallback report:",
+      error
+    );
+
+    return buildFallbackReport(input);
+  }
 }
