@@ -3,7 +3,7 @@ import { getGeminiModel } from "@/lib/gemini-client";
 async function generateWithRetry(
   model: any,
   prompt: string,
-  attempts = 2
+  attempts = 1
 ) {
   let lastError: unknown;
 
@@ -13,8 +13,8 @@ async function generateWithRetry(
 
       const timeout = new Promise<never>((_, reject) => {
         setTimeout(() => {
-          reject(new Error("Gemini request timed out after 45 seconds."));
-        }, 45000);
+          reject(new Error("Gemini request timed out after 30 seconds."));
+        }, 30000);
       });
 
       return await Promise.race([request, timeout]);
@@ -25,10 +25,6 @@ async function generateWithRetry(
         `Gemini report attempt ${attempt}/${attempts} failed:`,
         error
       );
-
-      if (attempt < attempts) {
-        await new Promise((resolve) => setTimeout(resolve, 1500));
-      }
     }
   }
 
