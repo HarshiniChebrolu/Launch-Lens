@@ -1,207 +1,254 @@
 "use client";
 
-import { useState } from "react";
-import { ArrowRight, ArrowLeft, Sparkles } from "lucide-react";
-import WizardProgress from "./WizardProgress";
+import React, { useState } from "react";
+import {
+  Lightbulb,
+  Wand2,
+  Compass,
+  ArrowRight,
+  Sparkles,
+  Layers,
+  CheckCircle2,
+} from "lucide-react";
 import LoadingEngine from "./LoadingEngine";
-import { StartupReport } from "@/types/report";
+import IntelligentIdeaEditor from "./IntelligentIdeaEditor";
+import IdeaDiscoveryLibrary from "./IdeaDiscoveryLibrary";
+import { IdeaInput, StartupReport } from "@/types/report";
+import { DiscoveryIdea } from "@/lib/idea-library";
 
-type IdeaData = {
-  idea: string;
-  users: string;
-  problem: string;
-  industry: string;
-  budget: string;
-  goal: string;
-};
-
-const emptyIdea: IdeaData = {
-  idea: "",
-  users: "",
-  problem: "",
-  industry: "",
-  budget: "",
-  goal: "",
-};
-
-const industries = [
-  "AI SaaS",
-  "EdTech",
-  "HealthTech",
-  "FinTech",
-  "RetailTech",
-  "Agriculture",
-  "Productivity",
-  "Women Safety",
-];
-
-const goals = ["Hackathon", "Startup", "College Project", "MVP", "Business"];
+type EntryPath = "have_idea" | "improve_idea" | "find_idea";
 
 export default function IdeaWizard({
   onReportReady,
+  initialIdea,
 }: {
   onReportReady: (report: StartupReport) => void;
+  initialIdea?: Partial<IdeaInput & { title?: string; constraints?: string }>;
 }) {
-  const [step, setStep] = useState(0);
+  const [activePath, setActivePath] = useState<EntryPath>("have_idea");
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState<IdeaData>(emptyIdea);
   const [error, setError] = useState("");
+  const [prefilledIdea, setPrefilledIdea] = useState<Partial<IdeaInput & { title?: string; constraints?: string }>>(
+    initialIdea || {}
+  );
 
-  function update(key: keyof IdeaData, value: string) {
-    setData((prev) => ({ ...prev, [key]: value }));
+  async function handleValidate(data: IdeaInput) {
+    setError("");
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/analyze", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const json = await res.json();
+
+      if (!json.success || !json.report) {
+        throw new Error(json.error || "Failed to generate report");
+      }
+
+      // Persist to database/local storage
+      try {
+        const { saveReportToSupabase } = await import("@/lib/reports-db");
+        await saveReportToSupabase(data, json.report);
+      } catch (saveErr) {
+        console.warn("Report save warning:", saveErr);
+      }
+
+      onReportReady(json.report);
+    } catch (err: any) {
+      console.error("Analysis generation error:", err);
+      setError(
+        err?.message ||
+          "Could not generate report. Please check API connection or try again."
+      );
+      setLoading(false);
+    }
   }
 
-  async function generate() {
-  setError("");
-  setLoading(true);
-
-  try {
-    const res = await fetch("/api/analyze", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-
-    const json = await res.json();
-
-    if (!json.success) {
-      throw new Error(json.error || "Failed to generate report");
+  function handleSelectFromLibrary(idea: DiscoveryIdea, expansionDirective?: string) {
+    let solutionText = idea.proposedSolution;
+    if (expansionDirective) {
+      solutionText += `\n[AI Expansion]: ${expansionDirective}`;
     }
 
-    const { saveReportToSupabase } = await import("@/lib/reports-db");
-    await saveReportToSupabase(data, json.report);
+    setPrefilledIdea({
+      title: idea.name,
+      idea: `${idea.proposedSolution}\nKey MVP: ${idea.mvpFeatures.slice(0, 2).join("; ")}`,
+      users: idea.intendedUsers,
+      problem: idea.problem,
+      industry: idea.category.includes("AI") ? "AI SaaS" : idea.category,
+      budget: "Low MVP budget (< $1,000)",
+      goal: "Startup Venture",
+    });
 
-    onReportReady(json.report);
-  } catch {
-    setError("Could not generate report. Please check API keys or try again.");
-  } finally {
-    setLoading(false);
+    // Switch to editor
+    setActivePath("have_idea");
   }
-}
 
-  if (loading) return <LoadingEngine />;
+  if (loading) {
+    return <LoadingEngine />;
+  }
 
   return (
-    <section className="wizardPage">
-      <div className="wizardHeader">
-        <span className="wizardBadge">
-          <Sparkles size={15} />
-          Guided Startup Wizard
-        </span>
-
-        <h1>Let’s understand what you want to build.</h1>
-        <p>
-          Answer only what you know. Launch Lens will research and structure the
-          rest.
-        </p>
-      </div>
-
-      <WizardProgress step={step} />
-
-      <div className="wizardCard">
-        {step === 0 && (
-          <div className="wizardScreen">
-            <h2>What are you building?</h2>
-            <textarea
-              value={data.idea}
-              onChange={(e) => update("idea", e.target.value)}
-              placeholder="Ex: An AI platform that helps students validate startup ideas before building them..."
-            />
+    <section className="w-full space-y-6 max-w-6xl mx-auto">
+      {/* 1. Header with 3 Entry Paths */}
+      <div className="rounded-2xl border border-slate-800 bg-slate-900/90 p-6 sm:p-8 shadow-xl backdrop-blur-md space-y-6">
+        <div className="space-y-2 text-center max-w-2xl mx-auto">
+          <div className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3.5 py-1 text-xs font-semibold text-cyan-400">
+            <Sparkles className="h-3.5 w-3.5" />
+            <span>AI Idea Creation Studio</span>
           </div>
-        )}
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            How would you like to begin?
+          </h1>
+          <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            Whether you have a rough concept, an unrefined idea, or no idea at all, LaunchLens will help you formulate a validated venture proposal.
+          </p>
+        </div>
 
-        {step === 1 && (
-          <div className="wizardScreen">
-            <h2>Who are your target users?</h2>
-            <input
-              value={data.users}
-              onChange={(e) => update("users", e.target.value)}
-              placeholder="Ex: college students, founders, small businesses..."
-            />
-          </div>
-        )}
-
-        {step === 2 && (
-          <div className="wizardScreen">
-            <h2>What problem are you solving?</h2>
-            <textarea
-              value={data.problem}
-              onChange={(e) => update("problem", e.target.value)}
-              placeholder="Describe the pain point clearly..."
-            />
-          </div>
-        )}
-
-        {step === 3 && (
-          <div className="wizardScreen">
-            <h2>Choose your industry</h2>
-            <div className="choiceGrid">
-              {industries.map((item) => (
-                <button
-                  key={item}
-                  className={data.industry === item ? "choice active" : "choice"}
-                  onClick={() => update("industry", item)}
-                >
-                  {item}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {step === 4 && (
-          <div className="wizardScreen">
-            <h2>What is your budget or build constraint?</h2>
-            <input
-              value={data.budget}
-              onChange={(e) => update("budget", e.target.value)}
-              placeholder="Ex: Free tools only, ₹5000, low MVP budget..."
-            />
-          </div>
-        )}
-
-        {step === 5 && (
-          <div className="wizardScreen">
-            <h2>What is your goal?</h2>
-            <div className="choiceGrid">
-              {goals.map((item) => (
-                <button
-                  key={item}
-                  className={data.goal === item ? "choice active" : "choice"}
-                  onClick={() => update("goal", item)}
-                >
-                  {item}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {error && <p className="wizardError">{error}</p>}
-
-        <div className="wizardActions">
+        {/* 3 Entry Path Selector Cards (Functional Actions) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* Path 1: I Have an Idea */}
           <button
-            className="wizardBtn secondary"
-            disabled={step === 0}
-            onClick={() => setStep(step - 1)}
+            type="button"
+            onClick={() => setActivePath("have_idea")}
+            className={`text-left p-5 rounded-2xl border transition-all flex flex-col justify-between space-y-3 group ${
+              activePath === "have_idea"
+                ? "border-cyan-500/50 bg-cyan-500/10 shadow-lg shadow-cyan-500/10"
+                : "border-slate-800 bg-slate-950/60 hover:border-slate-700 hover:bg-slate-900"
+            }`}
           >
-            <ArrowLeft size={18} />
-            Back
+            <div className="space-y-2">
+              <div
+                className={`flex h-10 w-10 items-center justify-center rounded-xl border ${
+                  activePath === "have_idea"
+                    ? "bg-cyan-500/20 border-cyan-500/40 text-cyan-300"
+                    : "bg-slate-900 border-slate-800 text-slate-400 group-hover:text-cyan-400"
+                }`}
+              >
+                <Lightbulb className="h-5 w-5" />
+              </div>
+              <h3 className="text-sm font-bold text-white tracking-tight">
+                1. I Have an Idea
+              </h3>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Enter your rough concept in plain English or voice. Formulate your problem, users, and constraints.
+              </p>
+            </div>
+
+            <div
+              className={`flex items-center gap-1.5 text-[11px] font-semibold ${
+                activePath === "have_idea" ? "text-cyan-300" : "text-slate-500"
+              }`}
+            >
+              <span>{activePath === "have_idea" ? "Active Mode" : "Start with concept"}</span>
+              <ArrowRight className="h-3 w-3" />
+            </div>
           </button>
 
-          {step < 5 ? (
-            <button className="wizardBtn primary" onClick={() => setStep(step + 1)}>
-              Next
-              <ArrowRight size={18} />
-            </button>
-          ) : (
-            <button className="wizardBtn primary" onClick={generate}>
-              Generate Report
-              <Sparkles size={18} />
-            </button>
-          )}
+          {/* Path 2: Improve My Idea with AI */}
+          <button
+            type="button"
+            onClick={() => {
+              setActivePath("improve_idea");
+            }}
+            className={`text-left p-5 rounded-2xl border transition-all flex flex-col justify-between space-y-3 group ${
+              activePath === "improve_idea"
+                ? "border-indigo-500/50 bg-indigo-500/10 shadow-lg shadow-indigo-500/10"
+                : "border-slate-800 bg-slate-950/60 hover:border-slate-700 hover:bg-slate-900"
+            }`}
+          >
+            <div className="space-y-2">
+              <div
+                className={`flex h-10 w-10 items-center justify-center rounded-xl border ${
+                  activePath === "improve_idea"
+                    ? "bg-indigo-500/20 border-indigo-500/40 text-indigo-300"
+                    : "bg-slate-900 border-slate-800 text-slate-400 group-hover:text-indigo-400"
+                }`}
+              >
+                <Wand2 className="h-5 w-5" />
+              </div>
+              <h3 className="text-sm font-bold text-white tracking-tight">
+                2. Improve My Idea with AI
+              </h3>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Provide a raw 1-sentence draft and let our venture model structure the beachhead, MVP, and revenue model.
+              </p>
+            </div>
+
+            <div
+              className={`flex items-center gap-1.5 text-[11px] font-semibold ${
+                activePath === "improve_idea" ? "text-indigo-300" : "text-slate-500"
+              }`}
+            >
+              <span>{activePath === "improve_idea" ? "Active Mode" : "Auto-refine concept"}</span>
+              <ArrowRight className="h-3 w-3" />
+            </div>
+          </button>
+
+          {/* Path 3: Help Me Find an Idea */}
+          <button
+            type="button"
+            onClick={() => setActivePath("find_idea")}
+            className={`text-left p-5 rounded-2xl border transition-all flex flex-col justify-between space-y-3 group ${
+              activePath === "find_idea"
+                ? "border-purple-500/50 bg-purple-500/10 shadow-lg shadow-purple-500/10"
+                : "border-slate-800 bg-slate-950/60 hover:border-slate-700 hover:bg-slate-900"
+            }`}
+          >
+            <div className="space-y-2">
+              <div
+                className={`flex h-10 w-10 items-center justify-center rounded-xl border ${
+                  activePath === "find_idea"
+                    ? "bg-purple-500/20 border-purple-500/40 text-purple-300"
+                    : "bg-slate-900 border-slate-800 text-slate-400 group-hover:text-purple-400"
+                }`}
+              >
+                <Compass className="h-5 w-5" />
+              </div>
+              <h3 className="text-sm font-bold text-white tracking-tight">
+                3. Help Me Find an Idea
+              </h3>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Browse our 15-industry library of vetted, pre-structured startup concepts. Choose one and customize it.
+              </p>
+            </div>
+
+            <div
+              className={`flex items-center gap-1.5 text-[11px] font-semibold ${
+                activePath === "find_idea" ? "text-purple-300" : "text-slate-500"
+              }`}
+            >
+              <span>{activePath === "find_idea" ? "Active Mode" : "Browse 15 categories"}</span>
+              <ArrowRight className="h-3 w-3" />
+            </div>
+          </button>
         </div>
       </div>
+
+      {error && (
+        <div className="rounded-2xl border border-rose-500/30 bg-rose-500/10 p-4 text-xs text-rose-300">
+          {error}
+        </div>
+      )}
+
+      {/* 2. Workspace View based on selected Path */}
+      {activePath === "find_idea" ? (
+        <IdeaDiscoveryLibrary
+          onSelectIdea={handleSelectFromLibrary}
+          onClose={() => setActivePath("have_idea")}
+        />
+      ) : (
+        <IntelligentIdeaEditor
+          initialIdea={prefilledIdea}
+          onValidate={handleValidate}
+          onExploreLibrary={() => setActivePath("find_idea")}
+          initialMode={activePath === "improve_idea" ? "improve" : "direct"}
+        />
+      )}
     </section>
   );
 }

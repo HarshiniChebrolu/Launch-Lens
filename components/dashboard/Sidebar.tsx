@@ -16,7 +16,9 @@ import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 
 export type DashboardMode =
+  | "dashboard"
   | "history"
+  | "reports"
   | "wizard"
   | "market"
   | "competitors"
@@ -28,52 +30,52 @@ export type DashboardMode =
 const menu: {
   label: string;
   mode: DashboardMode;
-  icon: React.ReactNode;
+  icon: React.ComponentType<{ className?: string }>;
 }[] = [
   {
     label: "Dashboard",
-    mode: "history",
-    icon: <LayoutDashboard size={18} />,
+    mode: "dashboard",
+    icon: LayoutDashboard,
   },
   {
     label: "New Idea",
     mode: "wizard",
-    icon: <PlusCircle size={18} />,
+    icon: PlusCircle,
   },
   {
     label: "Reports",
-    mode: "history",
-    icon: <Archive size={18} />,
+    mode: "reports",
+    icon: Archive,
   },
   {
     label: "Market",
     mode: "market",
-    icon: <LineChart size={18} />,
+    icon: LineChart,
   },
   {
     label: "Competitors",
     mode: "competitors",
-    icon: <Briefcase size={18} />,
+    icon: Briefcase,
   },
   {
     label: "Blueprint",
     mode: "blueprint",
-    icon: <Layers3 size={18} />,
+    icon: Layers3,
   },
   {
     label: "Pitch",
     mode: "pitch",
-    icon: <Rocket size={18} />,
+    icon: Rocket,
   },
   {
-  label: "Research Papers",
-  mode: "research",
-  icon: <BookOpen size={18} />,
-},
+    label: "Research Papers",
+    mode: "research",
+    icon: BookOpen,
+  },
   {
     label: "Settings",
     mode: "settings",
-    icon: <Settings size={18} />,
+    icon: Settings,
   },
 ];
 
@@ -87,11 +89,14 @@ export default function Sidebar({
   const router = useRouter();
 
   async function logout() {
-    const { error } = await supabase.auth.signOut();
+    try {
+      await supabase.auth.signOut();
+    } catch (e) {
+      console.warn("Sign out remote warning:", e);
+    }
 
-    if (error) {
-      alert(error.message);
-      return;
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("launch_lens_user");
     }
 
     router.replace("/auth");
@@ -99,30 +104,58 @@ export default function Sidebar({
   }
 
   return (
-    <aside className="sidebar">
-      <div className="logo sidebarLogo">
-        <span className="logoIcon">
-          <Rocket size={20} />
-        </span>
+    <aside className="w-[268px] shrink-0 border-r border-slate-800/80 bg-slate-950/90 p-5 flex flex-col justify-between sticky top-0 h-screen overflow-y-auto backdrop-blur-xl z-30 dashboardSidebar">
+      <div className="space-y-6">
+        {/* Brand Header */}
+        <a href="/" className="flex items-center gap-3 px-2 group">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 text-white shadow-lg shadow-cyan-500/25 group-hover:scale-105 transition-transform">
+            <Rocket className="h-5 w-5" />
+          </div>
+          <div>
+            <span className="text-base font-extrabold tracking-tight text-white block sidebarLogo">
+              Launch Lens
+            </span>
+            <span className="text-[10px] text-cyan-400 font-semibold tracking-wider uppercase block">
+              Cockpit v2.0
+            </span>
+          </div>
+        </a>
 
-        <span>Launch Lens</span>
+        {/* Navigation Items */}
+        <nav className="space-y-1">
+          {menu.map((item) => {
+            const Icon = item.icon;
+            const isActive = mode === item.mode;
+            return (
+              <button
+                key={item.label}
+                onClick={() => setMode(item.mode)}
+                className={`flex items-center gap-3 w-full rounded-xl px-3.5 py-2.5 text-xs font-semibold transition-all ${
+                  isActive
+                    ? "bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 shadow-sm sidebarItemActive"
+                    : "text-slate-400 hover:text-slate-200 hover:bg-slate-900/60 sidebarItem"
+                }`}
+              >
+                <Icon
+                  className={`h-4 w-4 ${
+                    isActive ? "text-cyan-400" : "text-slate-500"
+                  }`}
+                />
+                <span>{item.label}</span>
+              </button>
+            );
+          })}
+        </nav>
       </div>
 
-      <div className="sideMenu">
-        {menu.map((item) => (
-          <button
-            key={item.label}
-            className={`sideItem ${mode === item.mode ? "active" : ""}`}
-            onClick={() => setMode(item.mode)}
-          >
-            {item.icon}
-            {item.label}
-          </button>
-        ))}
-
-        <button className="sideItem logout" onClick={logout}>
-          <LogOut size={18} />
-          Logout
+      {/* Logout Action */}
+      <div className="pt-4 border-t border-slate-800/80 sidebarLogoutBorder">
+        <button
+          onClick={logout}
+          className="flex items-center gap-3 w-full rounded-xl px-3.5 py-2.5 text-xs font-semibold text-rose-400 hover:bg-rose-500/10 hover:text-rose-300 transition-colors sidebarLogoutBtn"
+        >
+          <LogOut className="h-4 w-4" />
+          <span>Sign Out</span>
         </button>
       </div>
     </aside>

@@ -1,33 +1,50 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-html{
-scroll-behavior:smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-
-background:#050816;
-
-color:white;
-
-font-family:
-Inter,
-Segoe UI,
-sans-serif;
-
-overflow-x:hidden;
-
+body {
+  background: #050816;
+  color: white;
+  font-family: Inter, Segoe UI, sans-serif;
+  overflow-x: hidden;
 }
 
-section{
+section:not(.dashboardMain):not(.reportPage):not(.authShell) {
+  padding: 100px 8%;
+}
 
-padding:100px 8%;
+.dashboardShell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 268px minmax(0, 1fr);
+  width: 100%;
+  max-width: 100vw;
+  background: radial-gradient(circle at top right, rgba(79, 70, 229, 0.18), transparent 30%), #050816;
+}
 
+.dashboardMain {
+  width: 100%;
+  min-width: 0;
+  max-width: 1600px;
+  padding: 24px 32px 60px !important;
+  overflow-x: hidden;
+}
+
+.reportPage {
+  padding: 0 !important;
+  width: 100%;
+  min-width: 0;
 }
 
 a{
@@ -4637,3 +4654,748 @@ html[data-theme="light"] .paperCardActions .googleScholarAction{
     grid-template-columns:1fr;
   }
 }
+
+/* =========================================================
+   COMPREHENSIVE LIGHT MODE MASTER SUITE & LAYOUT ALIGNMENTS
+   ========================================================= */
+
+html[data-theme="light"],
+html:not([data-theme="dark"]):not(.dark) {
+  --theme-bg: #f8fafc;
+  --theme-surface: #ffffff;
+  --theme-card: #ffffff;
+  --theme-card-strong: #ffffff;
+  --theme-border: #e2e8f0;
+  --theme-text: #0f172a;
+  --theme-text-soft: #334155;
+  --theme-muted: #64748b;
+  --theme-input: #f1f5f9;
+  --theme-shadow: rgba(15, 23, 42, 0.08);
+  color-scheme: light;
+}
+
+html[data-theme="light"] body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* 1. Landing Page in Light Mode */
+html[data-theme="light"] .landingNav {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06) !important;
+}
+
+html[data-theme="light"] .landingNavLogo {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .landingNavLinks a {
+  color: #475569 !important;
+}
+
+html[data-theme="light"] .landingNavLinks a:hover {
+  color: #4f46e5 !important;
+}
+
+html[data-theme="light"] .landingNavSignIn {
+  color: #334155 !important;
+}
+
+html[data-theme="light"] .landingNavSignIn:hover {
+  color: #4f46e5 !important;
+}
+
+html[data-theme="light"] .landingNavMobileBtn {
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+
+html[data-theme="light"] .landingNavDrawer {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12) !important;
+}
+
+html[data-theme="light"] .landingNavDrawer a {
+  color: #334155 !important;
+}
+
+html[data-theme="light"] .landingNavDrawer a:hover {
+  color: #4f46e5 !important;
+}
+
+html[data-theme="light"] .landingNavDrawerSignIn {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #334155 !important;
+}
+
+html[data-theme="light"] .landingHeroTitle,
+html[data-theme="light"] .landingSectionTitle {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .landingHeroDesc,
+html[data-theme="light"] .landingSectionDesc {
+  color: #475569 !important;
+}
+
+html[data-theme="light"] .landingHeroSecBtn {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #1e293b !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04) !important;
+}
+
+html[data-theme="light"] .landingHeroSecBtn:hover {
+  background: #f8fafc !important;
+  border-color: #94a3b8 !important;
+}
+
+html[data-theme="light"] .landingHeroCheckmarks span {
+  color: #475569 !important;
+}
+
+html[data-theme="light"] .landingHeroCard {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08) !important;
+}
+
+html[data-theme="light"] .landingHeroCardHeader {
+  border-color: #f1f5f9 !important;
+}
+
+html[data-theme="light"] .landingStatBox {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .landingHeroInnerCard {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .landingCardTitle {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .landingCardText,
+html[data-theme="light"] .landingHeroCardText {
+  color: #475569 !important;
+}
+
+html[data-theme="light"] .landingMuted {
+  color: #64748b !important;
+}
+
+html[data-theme="light"] .landingArchBox {
+  background: #faf5ff !important;
+  border-color: #e9d5ff !important;
+}
+
+html[data-theme="light"] .landingArchText {
+  color: #581c87 !important;
+}
+
+html[data-theme="light"] .landingBadge {
+  background: rgba(6, 182, 212, 0.1) !important;
+  border-color: rgba(6, 182, 212, 0.25) !important;
+  color: #0891b2 !important;
+}
+
+html[data-theme="light"] .landingFeatureCard {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04) !important;
+}
+
+html[data-theme="light"] .landingFeatureCard:hover {
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08) !important;
+}
+
+html[data-theme="light"] .landingFeatureIconBox {
+  background: #f0fdfa !important;
+  border-color: #ccfbf1 !important;
+}
+
+html[data-theme="light"] .landingFeaturePill {
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #475569 !important;
+}
+
+html[data-theme="light"] .landingFeatureFooter {
+  border-color: #f1f5f9 !important;
+}
+
+html[data-theme="light"] .landingFeatureMetric {
+  background: #f0fdfa !important;
+  border-color: #ccfbf1 !important;
+  color: #0d9488 !important;
+}
+
+html[data-theme="light"] .landingFeatureAction {
+  color: #64748b !important;
+}
+
+html[data-theme="light"] .landingFeatureCard:hover .landingFeatureAction {
+  color: #0891b2 !important;
+}
+
+html[data-theme="light"] .landingStepCard {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04) !important;
+}
+
+html[data-theme="light"] .landingStepNum {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="light"] .landingStepIconBox {
+  background: #f0fdfa !important;
+  border-color: #ccfbf1 !important;
+}
+
+html[data-theme="light"] .landingStepFooter {
+  border-color: #f1f5f9 !important;
+}
+
+html[data-theme="light"] .landingPreviewShell {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 25px 70px rgba(15, 23, 42, 0.08) !important;
+}
+
+html[data-theme="light"] .landingPreviewBar {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .landingPreviewUrl {
+  color: #64748b !important;
+  border-color: #cbd5e1 !important;
+}
+
+html[data-theme="light"] .landingPreviewTabs {
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .landingPreviewTab {
+  color: #64748b !important;
+}
+
+html[data-theme="light"] .landingPreviewTab:hover {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .landingPreviewTabActive {
+  background: #ffffff !important;
+  color: #0891b2 !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06) !important;
+}
+
+html[data-theme="light"] .landingCTACard {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08) !important;
+}
+
+html[data-theme="light"] .landingFooter {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .landingFooterLinks a {
+  color: #64748b !important;
+}
+
+html[data-theme="light"] .landingFooterLinks a:hover {
+  color: #0f172a !important;
+}
+
+/* 2. Auth Page in Light Mode */
+html[data-theme="light"] .authPageContainer {
+  background: #f8fafc !important;
+}
+
+html[data-theme="light"] .authCardShell {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 25px 70px rgba(15, 23, 42, 0.09) !important;
+}
+
+html[data-theme="light"] .authBrandPanel {
+  background: linear-gradient(135deg, #f0fdfa 0%, #f8fafc 50%, #eef2ff 100%) !important;
+  border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .authBrandTitle,
+html[data-theme="light"] .authHeading,
+html[data-theme="light"] .authTitle {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .authBrandText,
+html[data-theme="light"] .authSubTitle {
+  color: #475569 !important;
+}
+
+html[data-theme="light"] .authFeatureList {
+  border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .authFeatureItem {
+  color: #334155 !important;
+}
+
+html[data-theme="light"] .authOfflinePill {
+  background: #ffffff !important;
+  border-color: #ccfbf1 !important;
+  color: #0f766e !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04) !important;
+}
+
+html[data-theme="light"] .authFormPanel {
+  background: #ffffff !important;
+}
+
+html[data-theme="light"] .authTabSwitch {
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .authTabActive {
+  background: #ffffff !important;
+  color: #4f46e5 !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06) !important;
+}
+
+html[data-theme="light"] .authTabInactive {
+  color: #64748b !important;
+}
+
+html[data-theme="light"] .authTabInactive:hover {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .authQuickDemoBtn {
+  background: #f0fdfa !important;
+  border-color: #99f6e4 !important;
+  color: #0f766e !important;
+}
+
+html[data-theme="light"] .authQuickDemoBtn:hover {
+  background: #ccfbf1 !important;
+}
+
+html[data-theme="light"] .authFieldLabel {
+  color: #334155 !important;
+}
+
+html[data-theme="light"] .authFieldIcon {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="light"] .authInput {
+  background: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .authInput::placeholder {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="light"] .authInput:focus {
+  background: #ffffff !important;
+  border-color: #4f46e5 !important;
+}
+
+html[data-theme="light"] .authStrengthTrack {
+  background: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .authDivider div {
+  border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .authDividerText {
+  background: #ffffff !important;
+  color: #94a3b8 !important;
+}
+
+html[data-theme="light"] .authGuestBtn {
+  background: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  color: #1e293b !important;
+}
+
+html[data-theme="light"] .authGuestBtn:hover {
+  background: #f1f5f9 !important;
+  border-color: #94a3b8 !important;
+}
+
+/* 3. Dashboard, Sidebar & Topbar in Light Mode */
+html[data-theme="light"] .dashboardShell {
+  background: radial-gradient(circle at top right, rgba(79, 70, 229, 0.04), transparent 30%), #f8fafc !important;
+}
+
+html[data-theme="light"] .dashboardSidebar {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 4px 0 20px rgba(15, 23, 42, 0.03) !important;
+}
+
+html[data-theme="light"] .sidebarLogo {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .sidebarItem {
+  color: #475569 !important;
+}
+
+html[data-theme="light"] .sidebarItem:hover {
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .sidebarItemActive {
+  background: #eef2ff !important;
+  border-color: #c7d2fe !important;
+  color: #4338ca !important;
+  box-shadow: 0 2px 6px rgba(79, 70, 229, 0.06) !important;
+}
+
+html[data-theme="light"] .sidebarLogoutBorder {
+  border-color: #f1f5f9 !important;
+}
+
+html[data-theme="light"] .sidebarLogoutBtn {
+  color: #e11d48 !important;
+}
+
+html[data-theme="light"] .sidebarLogoutBtn:hover {
+  background: #ffe4e6 !important;
+  color: #be123c !important;
+}
+
+html[data-theme="light"] .dashboardTopbar {
+  border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .topbarEyebrow {
+  color: #0891b2 !important;
+}
+
+html[data-theme="light"] .topbarHeading {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .topbarSyncBadge,
+html[data-theme="light"] .topbarUserBadge {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #334155 !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04) !important;
+}
+
+/* 4. Report Shell, Modules & Copilot in Light Mode */
+html[data-theme="light"] .reportShellHeader {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04) !important;
+}
+
+html[data-theme="light"] .reportTitle {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .reportSummary {
+  color: #475569 !important;
+}
+
+html[data-theme="light"] .reportPdfBtn {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+html[data-theme="light"] .reportPdfBtn:hover {
+  background: #f8fafc !important;
+}
+
+html[data-theme="light"] .reportNavShell {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .reportTabBtn {
+  color: #64748b !important;
+}
+
+html[data-theme="light"] .reportTabBtn:hover {
+  background: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .reportTabBtnActive {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0891b2 !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06) !important;
+}
+
+html[data-theme="light"] .reportNavLabel {
+  color: #64748b !important;
+}
+
+html[data-theme="light"] .reportModuleSelect {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .reportSelectOption {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .copilotPanelShell {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08) !important;
+}
+
+html[data-theme="light"] .copilotPanelHeader {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .copilotTitle {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .copilotContext {
+  color: #64748b !important;
+}
+
+html[data-theme="light"] .copilotResetBtn {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #64748b !important;
+}
+
+html[data-theme="light"] .copilotResetBtn:hover {
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .copilotChipsRow {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .copilotChip {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #334155 !important;
+}
+
+html[data-theme="light"] .copilotChip:hover {
+  border-color: #06b6d4 !important;
+  color: #0891b2 !important;
+}
+
+/* General Report Module Card Overrides for Light Mode */
+html[data-theme="light"] .rounded-2xl.border.border-slate-800,
+html[data-theme="light"] .rounded-3xl.border.border-slate-800,
+html[data-theme="light"] .rounded-xl.border.border-slate-800 {
+  border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .bg-slate-900,
+html[data-theme="light"] .bg-slate-900\/90,
+html[data-theme="light"] .bg-slate-900\/80,
+html[data-theme="light"] .bg-slate-900\/60,
+html[data-theme="light"] .bg-slate-950,
+html[data-theme="light"] .bg-slate-950\/80,
+html[data-theme="light"] .bg-slate-950\/70,
+html[data-theme="light"] .bg-slate-950\/60,
+html[data-theme="light"] .bg-slate-950\/50,
+html[data-theme="light"] .bg-slate-950\/40 {
+  background-color: #ffffff !important;
+}
+
+html[data-theme="light"] .bg-slate-800,
+html[data-theme="light"] .bg-slate-800\/80,
+html[data-theme="light"] .bg-slate-800\/60,
+html[data-theme="light"] .bg-slate-800\/50,
+html[data-theme="light"] .bg-slate-800\/40 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .border-slate-800,
+html[data-theme="light"] .border-slate-800\/80,
+html[data-theme="light"] .border-slate-800\/60,
+html[data-theme="light"] .border-slate-700,
+html[data-theme="light"] .border-slate-700\/80,
+html[data-theme="light"] .border-slate-700\/60,
+html[data-theme="light"] .border-slate-700\/50 {
+  border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] h1.text-white,
+html[data-theme="light"] h2.text-white,
+html[data-theme="light"] h3.text-white,
+html[data-theme="light"] h4.text-white,
+html[data-theme="light"] .text-white {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .text-slate-100,
+html[data-theme="light"] .text-slate-200,
+html[data-theme="light"] .text-slate-300 {
+  color: #334155 !important;
+}
+
+html[data-theme="light"] .text-slate-400 {
+  color: #475569 !important;
+}
+
+html[data-theme="light"] .text-slate-500 {
+  color: #64748b !important;
+}
+
+/* Recharts and SVG elements in Light Mode */
+html[data-theme="light"] .recharts-cartesian-grid line {
+  stroke: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .recharts-text,
+html[data-theme="light"] .recharts-cartesian-axis-tick text {
+  fill: #64748b !important;
+}
+
+html[data-theme="light"] .recharts-default-tooltip {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1) !important;
+}
+
+/* Floating Copilot Drawer Light Mode */
+html[data-theme="light"] [role="dialog"][aria-label="LaunchLens Copilot Chat"] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: -10px 0 40px rgba(15, 23, 42, 0.12) !important;
+}
+
+html[data-theme="light"] [role="dialog"][aria-label="LaunchLens Copilot Chat"] .bg-slate-950\/70,
+html[data-theme="light"] [role="dialog"][aria-label="LaunchLens Copilot Chat"] .bg-slate-950\/40,
+html[data-theme="light"] [role="dialog"][aria-label="LaunchLens Copilot Chat"] .bg-slate-950\/80 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] [role="dialog"][aria-label="LaunchLens Copilot Chat"] input {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] [role="dialog"][aria-label="LaunchLens Copilot Chat"] input::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Modals & Popups Light Mode */
+html[data-theme="light"] .fixed.inset-0.z-50 .bg-slate-900 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 25px 70px rgba(15, 23, 42, 0.15) !important;
+}
+
+/* Report Sections Dropdown Light Mode */
+html[data-theme="light"] .reportSectionDropdown {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.18) !important;
+}
+
+html[data-theme="light"] .reportSectionDropdown button {
+  color: #1e293b !important;
+}
+
+html[data-theme="light"] .reportSectionDropdown button:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .reportSectionDropdown button.bg-cyan-500\/20 {
+  background-color: #e0f2fe !important;
+  border-color: #7dd3fc !important;
+  color: #0369a1 !important;
+}
+
+/* Unified Type Scale Hierarchy */
+.text-h1 {
+  font-size: clamp(1.75rem, 3vw, 2rem) !important; /* 28-32px */
+  line-height: 1.2 !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.025em !important;
+}
+
+.text-h2 {
+  font-size: clamp(1.375rem, 2.5vw, 1.5rem) !important; /* 22-24px */
+  line-height: 1.3 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.text-h3 {
+  font-size: clamp(1.0625rem, 2vw, 1.25rem) !important; /* 17-20px */
+  line-height: 1.4 !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.015em !important;
+}
+
+.text-body {
+  font-size: 0.9375rem !important; /* 15px (14-16px) */
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+}
+
+.text-body-sm {
+  font-size: 0.84375rem !important; /* 13.5px (13-14px) */
+  line-height: 1.5 !important;
+}
+
+.text-caption {
+  font-size: 0.78125rem !important; /* 12.5px (12-13px) */
+  line-height: 1.4 !important;
+}
+
+/* Report Header Typography (Crisp, Elegant & Proportional) */
+.reportTitle {
+  font-size: clamp(1.2rem, 2vw, 1.45rem) !important; /* ~20px - 23px */
+  line-height: 1.35 !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.015em !important;
+}
+
+.reportSummary {
+  font-size: 0.875rem !important; /* 14px */
+  line-height: 1.6 !important;
+  color: #94a3b8 !important;
+}
+
+html[data-theme="light"] .reportSummary {
+  color: #475569 !important;
+}
+

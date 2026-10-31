@@ -1,0 +1,583 @@
+{
+  "evaluatedAt": "2026-10-24T14:55:10.049Z",
+  "datasetSize": 50,
+  "domainCount": 15,
+  "overallAccuracy": 0.48,
+  "macroPrecision": 0.6436,
+  "macroRecall": 0.5798,
+  "macroF1": 0.5923,
+  "meanPrecisionAt3": 0.7959,
+  "meanRecallAt3": 0.8088,
+  "meanMRR": 0.9252,
+  "classMetrics": {
+    "Blue Ocean": {
+      "precision": 0,
+      "recall": 0,
+      "f1": 0,
+      "support": 0
+    },
+    "Emerging": {
+      "precision": 0.5,
+      "recall": 0.35714285714285715,
+      "f1": 0.41666666666666663,
+      "support": 14
+    },
+    "Moderately Contested": {
+      "precision": 0.21739130434782608,
+      "recall": 0.4166666666666667,
+      "f1": 0.2857142857142857,
+      "support": 12
+    },
+    "Highly Crowded": {
+      "precision": 0.8571428571428571,
+      "recall": 0.5454545454545454,
+      "f1": 0.6666666666666665,
+      "support": 22
+    },
+    "Insufficient Evidence": {
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "support": 2
+    }
+  },
+  "confusionMatrix": {
+    "Blue Ocean": {
+      "Blue Ocean": 0,
+      "Emerging": 0,
+      "Moderately Contested": 0,
+      "Highly Crowded": 0,
+      "Insufficient Evidence": 0
+    },
+    "Emerging": {
+      "Blue Ocean": 1,
+      "Emerging": 5,
+      "Moderately Contested": 8,
+      "Highly Crowded": 0,
+      "Insufficient Evidence": 0
+    },
+    "Moderately Contested": {
+      "Blue Ocean": 0,
+      "Emerging": 5,
+      "Moderately Contested": 5,
+      "Highly Crowded": 2,
+      "Insufficient Evidence": 0
+    },
+    "Highly Crowded": {
+      "Blue Ocean": 0,
+      "Emerging": 0,
+      "Moderately Contested": 10,
+      "Highly Crowded": 12,
+      "Insufficient Evidence": 0
+    },
+    "Insufficient Evidence": {
+      "Blue Ocean": 0,
+      "Emerging": 0,
+      "Moderately Contested": 0,
+      "Highly Crowded": 0,
+      "Insufficient Evidence": 2
+    }
+  },
+  "results": [
+    {
+      "id": "idea-01",
+      "domain": "FinTech",
+      "groundTruth": "Highly Crowded",
+      "predictedBand": "Highly Crowded",
+      "crowdednessScore": 72,
+      "evidenceCoverage": 63,
+      "competitorCount": 5,
+      "correct": true
+    },
+    {
+      "id": "idea-02",
+      "domain": "FinTech",
+      "groundTruth": "Emerging",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 58,
+      "evidenceCoverage": 50,
+      "competitorCount": 4,
+      "correct": false
+    },
+    {
+      "id": "idea-03",
+      "domain": "FinTech",
+      "groundTruth": "Highly Crowded",
+      "predictedBand": "Highly Crowded",
+      "crowdednessScore": 82,
+      "evidenceCoverage": 63,
+      "competitorCount": 5,
+      "correct": true
+    },
+    {
+      "id": "idea-04",
+      "domain": "FinTech",
+      "groundTruth": "Emerging",
+      "predictedBand": "Emerging",
+      "crowdednessScore": 44,
+      "evidenceCoverage": 38,
+      "competitorCount": 3,
+      "correct": true
+    },
+    {
+      "id": "idea-05",
+      "domain": "EdTech",
+      "groundTruth": "Highly Crowded",
+      "predictedBand": "Highly Crowded",
+      "crowdednessScore": 80,
+      "evidenceCoverage": 63,
+      "competitorCount": 5,
+      "correct": true
+    },
+    {
+      "id": "idea-06",
+      "domain": "EdTech",
+      "groundTruth": "Moderately Contested",
+      "predictedBand": "Emerging",
+      "crowdednessScore": 35,
+      "evidenceCoverage": 50,
+      "competitorCount": 4,
+      "correct": false
+    },
+    {
+      "id": "idea-07",
+      "domain": "EdTech",
+      "groundTruth": "Emerging",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 52,
+      "evidenceCoverage": 38,
+      "competitorCount": 3,
+      "correct": false
+    },
+    {
+      "id": "idea-08",
+      "domain": "EdTech",
+      "groundTruth": "Highly Crowded",
+      "predictedBand": "Highly Crowded",
+      "crowdednessScore": 80,
+      "evidenceCoverage": 63,
+      "competitorCount": 5,
+      "correct": true
+    },
+    {
+      "id": "idea-09",
+      "domain": "HealthTech",
+      "groundTruth": "Highly Crowded",
+      "predictedBand": "Highly Crowded",
+      "crowdednessScore": 71,
+      "evidenceCoverage": 63,
+      "competitorCount": 5,
+      "correct": true
+    },
+    {
+      "id": "idea-10",
+      "domain": "HealthTech",
+      "groundTruth": "Moderately Contested",
+      "predictedBand": "Emerging",
+      "crowdednessScore": 30,
+      "evidenceCoverage": 50,
+      "competitorCount": 4,
+      "correct": false
+    },
+    {
+      "id": "idea-11",
+      "domain": "HealthTech",
+      "groundTruth": "Emerging",
+      "predictedBand": "Emerging",
+      "crowdednessScore": 37,
+      "evidenceCoverage": 38,
+      "competitorCount": 3,
+      "correct": true
+    },
+    {
+      "id": "idea-12",
+      "domain": "HealthTech",
+      "groundTruth": "Highly Crowded",
+      "predictedBand": "Highly Crowded",
+      "crowdednessScore": 86,
+      "evidenceCoverage": 63,
+      "competitorCount": 5,
+      "correct": true
+    },
+    {
+      "id": "idea-13",
+      "domain": "Developer Tools",
+      "groundTruth": "Highly Crowded",
+      "predictedBand": "Highly Crowded",
+      "crowdednessScore": 86,
+      "evidenceCoverage": 63,
+      "competitorCount": 5,
+      "correct": true
+    },
+    {
+      "id": "idea-14",
+      "domain": "Developer Tools",
+      "groundTruth": "Emerging",
+      "predictedBand": "Blue Ocean",
+      "crowdednessScore": 26,
+      "evidenceCoverage": 38,
+      "competitorCount": 3,
+      "correct": false
+    },
+    {
+      "id": "idea-15",
+      "domain": "Developer Tools",
+      "groundTruth": "Highly Crowded",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 64,
+      "evidenceCoverage": 63,
+      "competitorCount": 5,
+      "correct": false
+    },
+    {
+      "id": "idea-16",
+      "domain": "Developer Tools",
+      "groundTruth": "Moderately Contested",
+      "predictedBand": "Highly Crowded",
+      "crowdednessScore": 71,
+      "evidenceCoverage": 50,
+      "competitorCount": 4,
+      "correct": false
+    },
+    {
+      "id": "idea-17",
+      "domain": "Cybersecurity",
+      "groundTruth": "Highly Crowded",
+      "predictedBand": "Highly Crowded",
+      "crowdednessScore": 86,
+      "evidenceCoverage": 63,
+      "competitorCount": 5,
+      "correct": true
+    },
+    {
+      "id": "idea-18",
+      "domain": "Cybersecurity",
+      "groundTruth": "Emerging",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 56,
+      "evidenceCoverage": 38,
+      "competitorCount": 3,
+      "correct": false
+    },
+    {
+      "id": "idea-19",
+      "domain": "Cybersecurity",
+      "groundTruth": "Highly Crowded",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 60,
+      "evidenceCoverage": 63,
+      "competitorCount": 5,
+      "correct": false
+    },
+    {
+      "id": "idea-20",
+      "domain": "Cybersecurity",
+      "groundTruth": "Moderately Contested",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 51,
+      "evidenceCoverage": 50,
+      "competitorCount": 4,
+      "correct": true
+    },
+    {
+      "id": "idea-21",
+      "domain": "Productivity",
+      "groundTruth": "Highly Crowded",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 60,
+      "evidenceCoverage": 63,
+      "competitorCount": 5,
+      "correct": false
+    },
+    {
+      "id": "idea-22",
+      "domain": "Productivity",
+      "groundTruth": "Highly Crowded",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 63,
+      "evidenceCoverage": 63,
+      "competitorCount": 5,
+      "correct": false
+    },
+    {
+      "id": "idea-23",
+      "domain": "Productivity",
+      "groundTruth": "Emerging",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 60,
+      "evidenceCoverage": 38,
+      "competitorCount": 3,
+      "correct": false
+    },
+    {
+      "id": "idea-24",
+      "domain": "Productivity",
+      "groundTruth": "Highly Crowded",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 50,
+      "evidenceCoverage": 63,
+      "competitorCount": 5,
+      "correct": false
+    },
+    {
+      "id": "idea-25",
+      "domain": "E-commerce",
+      "groundTruth": "Highly Crowded",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 66,
+      "evidenceCoverage": 63,
+      "competitorCount": 5,
+      "correct": false
+    },
+    {
+      "id": "idea-26",
+      "domain": "E-commerce",
+      "groundTruth": "Moderately Contested",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 58,
+      "evidenceCoverage": 50,
+      "competitorCount": 4,
+      "correct": true
+    },
+    {
+      "id": "idea-27",
+      "domain": "E-commerce",
+      "groundTruth": "Emerging",
+      "predictedBand": "Emerging",
+      "crowdednessScore": 42,
+      "evidenceCoverage": 38,
+      "competitorCount": 3,
+      "correct": true
+    },
+    {
+      "id": "idea-28",
+      "domain": "E-commerce",
+      "groundTruth": "Highly Crowded",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 53,
+      "evidenceCoverage": 63,
+      "competitorCount": 5,
+      "correct": false
+    },
+    {
+      "id": "idea-29",
+      "domain": "Logistics",
+      "groundTruth": "Highly Crowded",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 67,
+      "evidenceCoverage": 63,
+      "competitorCount": 5,
+      "correct": false
+    },
+    {
+      "id": "idea-30",
+      "domain": "Logistics",
+      "groundTruth": "Emerging",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 61,
+      "evidenceCoverage": 38,
+      "competitorCount": 3,
+      "correct": false
+    },
+    {
+      "id": "idea-31",
+      "domain": "Logistics",
+      "groundTruth": "Moderately Contested",
+      "predictedBand": "Emerging",
+      "crowdednessScore": 41,
+      "evidenceCoverage": 50,
+      "competitorCount": 4,
+      "correct": false
+    },
+    {
+      "id": "idea-32",
+      "domain": "Logistics",
+      "groundTruth": "Highly Crowded",
+      "predictedBand": "Highly Crowded",
+      "crowdednessScore": 83,
+      "evidenceCoverage": 63,
+      "competitorCount": 5,
+      "correct": true
+    },
+    {
+      "id": "idea-33",
+      "domain": "ClimateTech",
+      "groundTruth": "Highly Crowded",
+      "predictedBand": "Highly Crowded",
+      "crowdednessScore": 86,
+      "evidenceCoverage": 63,
+      "competitorCount": 5,
+      "correct": true
+    },
+    {
+      "id": "idea-34",
+      "domain": "ClimateTech",
+      "groundTruth": "Emerging",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 69,
+      "evidenceCoverage": 38,
+      "competitorCount": 3,
+      "correct": false
+    },
+    {
+      "id": "idea-35",
+      "domain": "ClimateTech",
+      "groundTruth": "Moderately Contested",
+      "predictedBand": "Emerging",
+      "crowdednessScore": 44,
+      "evidenceCoverage": 50,
+      "competitorCount": 4,
+      "correct": false
+    },
+    {
+      "id": "idea-36",
+      "domain": "ClimateTech",
+      "groundTruth": "Moderately Contested",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 68,
+      "evidenceCoverage": 50,
+      "competitorCount": 4,
+      "correct": true
+    },
+    {
+      "id": "idea-37",
+      "domain": "Agriculture",
+      "groundTruth": "Highly Crowded",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 63,
+      "evidenceCoverage": 63,
+      "competitorCount": 5,
+      "correct": false
+    },
+    {
+      "id": "idea-38",
+      "domain": "Agriculture",
+      "groundTruth": "Emerging",
+      "predictedBand": "Emerging",
+      "crowdednessScore": 47,
+      "evidenceCoverage": 38,
+      "competitorCount": 3,
+      "correct": true
+    },
+    {
+      "id": "idea-39",
+      "domain": "Agriculture",
+      "groundTruth": "Moderately Contested",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 60,
+      "evidenceCoverage": 50,
+      "competitorCount": 4,
+      "correct": true
+    },
+    {
+      "id": "idea-40",
+      "domain": "Agriculture",
+      "groundTruth": "Emerging",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 67,
+      "evidenceCoverage": 38,
+      "competitorCount": 3,
+      "correct": false
+    },
+    {
+      "id": "idea-41",
+      "domain": "Accessibility",
+      "groundTruth": "Moderately Contested",
+      "predictedBand": "Emerging",
+      "crowdednessScore": 41,
+      "evidenceCoverage": 50,
+      "competitorCount": 4,
+      "correct": false
+    },
+    {
+      "id": "idea-42",
+      "domain": "Accessibility",
+      "groundTruth": "Emerging",
+      "predictedBand": "Emerging",
+      "crowdednessScore": 47,
+      "evidenceCoverage": 38,
+      "competitorCount": 3,
+      "correct": true
+    },
+    {
+      "id": "idea-43",
+      "domain": "Accessibility",
+      "groundTruth": "Moderately Contested",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 56,
+      "evidenceCoverage": 50,
+      "competitorCount": 4,
+      "correct": true
+    },
+    {
+      "id": "idea-44",
+      "domain": "Accessibility",
+      "groundTruth": "Emerging",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 63,
+      "evidenceCoverage": 38,
+      "competitorCount": 3,
+      "correct": false
+    },
+    {
+      "id": "idea-45",
+      "domain": "AI Assistants",
+      "groundTruth": "Highly Crowded",
+      "predictedBand": "Highly Crowded",
+      "crowdednessScore": 86,
+      "evidenceCoverage": 63,
+      "competitorCount": 5,
+      "correct": true
+    },
+    {
+      "id": "idea-46",
+      "domain": "AI Assistants",
+      "groundTruth": "Moderately Contested",
+      "predictedBand": "Highly Crowded",
+      "crowdednessScore": 75,
+      "evidenceCoverage": 50,
+      "competitorCount": 4,
+      "correct": false
+    },
+    {
+      "id": "idea-47",
+      "domain": "Enterprise Software",
+      "groundTruth": "Highly Crowded",
+      "predictedBand": "Highly Crowded",
+      "crowdednessScore": 71,
+      "evidenceCoverage": 63,
+      "competitorCount": 5,
+      "correct": true
+    },
+    {
+      "id": "idea-48",
+      "domain": "Enterprise Software",
+      "groundTruth": "Highly Crowded",
+      "predictedBand": "Moderately Contested",
+      "crowdednessScore": 58,
+      "evidenceCoverage": 63,
+      "competitorCount": 5,
+      "correct": false
+    },
+    {
+      "id": "idea-49",
+      "domain": "Space Exploration",
+      "groundTruth": "Insufficient Evidence",
+      "predictedBand": "Insufficient Evidence",
+      "crowdednessScore": 0,
+      "evidenceCoverage": 0,
+      "competitorCount": 0,
+      "correct": true
+    },
+    {
+      "id": "idea-50",
+      "domain": "Archaeology",
+      "groundTruth": "Insufficient Evidence",
+      "predictedBand": "Insufficient Evidence",
+      "crowdednessScore": 0,
+      "evidenceCoverage": 20,
+      "competitorCount": 1,
+      "correct": true
+    }
+  ]
+}

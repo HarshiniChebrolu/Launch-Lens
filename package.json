@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "node --test tests/**/*.test.mjs",
+    "evaluate": "node scripts/evaluate-positioning.mjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
@@ -16,14 +18,18 @@
     "next": "^14.2.15",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "recharts": "^2.13.3"
+    "recharts": "^2.13.3",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@types/node": "^20.17.6",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.6.1",
     "eslint": "^8.57.1",
     "eslint-config-next": "^14.2.15",
+    "postcss": "^8.5.30",
+    "tailwindcss": "^3.4.19",
     "typescript": "^5.6.3"
   }
 }

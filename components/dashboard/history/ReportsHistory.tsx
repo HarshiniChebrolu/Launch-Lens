@@ -136,12 +136,22 @@ export default function ReportsHistory({
   }
 
   return (
-    <section className="historyPage">
-      <div className="sectionTitleRow">
+    <section className="space-y-6">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-800/80 pb-4">
         <div>
-          <span className="eyebrowSmall">Saved intelligence</span>
-          <h2>Your Startup Reports</h2>
+          <span className="text-xs font-semibold text-cyan-400 uppercase tracking-wider block">
+            Saved Intelligence Repository
+          </span>
+          <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+            Your Startup Reports
+          </h2>
         </div>
+        <button
+          onClick={onCreate}
+          className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 px-4 py-2 text-xs font-bold text-white shadow-md hover:from-cyan-400 hover:to-indigo-500 transition-all self-start sm:self-auto"
+        >
+          <span>New Idea</span>
+        </button>
       </div>
 
       <SearchBar value={localQuery} onChange={setLocalQuery} />
@@ -151,14 +161,14 @@ export default function ReportsHistory({
       <CompareReports reports={reports} />
 
       {filtered.length === 0 ? (
-        <div className="reportCard">
-          <h2>No matching reports</h2>
-          <p>
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-8 text-center space-y-2">
+          <h3 className="text-base font-bold text-white">No matching reports</h3>
+          <p className="text-xs text-slate-400">
             No saved report matches “{externalQuery || localQuery}”.
           </p>
         </div>
       ) : (
-        <div className="historyGrid">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((item) => (
             <ReportCard
               key={item.id}

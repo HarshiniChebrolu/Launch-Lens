@@ -1,3 +1,5 @@
+import type { MarketPositioningResult } from "./positioning";
+
 export type IdeaInput = {
   idea: string;
   users: string;
@@ -230,4 +232,6 @@ export type StartupReport = {
     partnerships: string[];
     growthLoops: string[];
   };
+
+  marketPositioning?: MarketPositioningResult;
 };

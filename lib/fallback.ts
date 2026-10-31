@@ -1,11 +1,29 @@
 import { IdeaInput, StartupReport } from "@/types/report";
 
+function extractCleanTitle(input: IdeaInput): string {
+  const explicitTitle = (input as any).title;
+  if (explicitTitle && typeof explicitTitle === "string" && explicitTitle.trim()) {
+    return explicitTitle.trim();
+  }
+  const raw = (input.idea || "").trim();
+  if (!raw) return "Untitled Startup Concept";
+  if (raw.length <= 55) return raw;
+
+  // Split on first punctuation or keyword to get a clean headline
+  const firstChunk = raw.split(/[\.;\n]|(?:\s+Key MVP:)|(?:\s+targets\s+)/i)[0].trim();
+  if (firstChunk.length >= 8 && firstChunk.length <= 65) {
+    return firstChunk;
+  }
+  return raw.slice(0, 52).trim() + "...";
+}
+
 export function buildFallbackReport(input: IdeaInput): StartupReport {
   const industry = input.industry || "startup";
   const users = input.users || "early users";
+  const cleanTitle = extractCleanTitle(input);
 
   return {
-    title: input.idea || "Untitled Startup Idea",
+    title: cleanTitle,
     summary: `${input.idea || "This startup idea"} targets ${users} in the ${industry} space. This fallback report is domain-aware and should be replaced by Gemini + Tavily when API keys are available.`,
     validation: {
   overallScore: 72,

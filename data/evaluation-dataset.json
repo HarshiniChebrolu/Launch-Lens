@@ -1,0 +1,703 @@
+[
+  {
+    "id": "idea-01",
+    "domain": "FinTech",
+    "name": "GlobalPay Ledger",
+    "description": "B2B cross-border payments and invoicing platform with multi-currency accounts and automated FX hedging.",
+    "groundTruthCrowdedness": "Highly Crowded",
+    "expectedTopCompetitor": "Wise",
+    "competitors": [
+      { "name": "Wise", "description": "International money transfer and multi-currency business accounts with transparent mid-market FX rates.", "isDirectCompetitor": true },
+      { "name": "Payoneer", "description": "Global payment platform for cross-border invoicing, marketplace payouts, and international wire transfers.", "isDirectCompetitor": true },
+      { "name": "Airwallex", "description": "Global financial infrastructure offering multi-currency accounts, foreign exchange, and corporate expense cards.", "isDirectCompetitor": true },
+      { "name": "OFX", "description": "Corporate international money transfers and dedicated currency hedging broker services.", "isDirectCompetitor": true },
+      { "name": "Stripe", "description": "Online payment processing suite for internet businesses with global billing and card acquiring.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-02",
+    "domain": "FinTech",
+    "name": "AgriCrop MicroCredit",
+    "description": "Micro-lending platform for smallholder cassava farmers in Sub-Saharan Africa using satellite vegetation health as alternative credit scoring.",
+    "groundTruthCrowdedness": "Emerging",
+    "expectedTopCompetitor": "Apollo Agriculture",
+    "competitors": [
+      { "name": "Apollo Agriculture", "description": "Fintech platform helping small-scale farmers in Africa access financing, farm inputs, and crop insurance.", "isDirectCompetitor": true },
+      { "name": "Crop2Cash", "description": "Digital platform enabling Nigerian smallholder farmers to access bank accounts and credit via mobile phones.", "isDirectCompetitor": true },
+      { "name": "Jumo", "description": "Financial technology company providing digital financial services and mobile credit in emerging markets.", "isDirectCompetitor": false },
+      { "name": "Tala", "description": "Consumer mobile micro-loan application serving underbanked populations in emerging markets.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-03",
+    "domain": "FinTech",
+    "name": "PocketTrack Budgeting",
+    "description": "Personal finance app that automatically categorizes bank transactions, tracks monthly budgets, and alerts on recurring subscriptions.",
+    "groundTruthCrowdedness": "Highly Crowded",
+    "expectedTopCompetitor": "YNAB",
+    "competitors": [
+      { "name": "YNAB", "description": "Zero-based budgeting software and app that helps users give every dollar a job and track expenses.", "isDirectCompetitor": true },
+      { "name": "Copilot Money", "description": "AI-powered personal finance and investment tracking app with automated subscription detection for iOS.", "isDirectCompetitor": true },
+      { "name": "Monarch Money", "description": "All-in-one personal finance tracker for recurring bills, net worth tracking, and joint family budgets.", "isDirectCompetitor": true },
+      { "name": "Rocket Money", "description": "Personal finance app that finds and cancels unwanted subscriptions and lowers household bills.", "isDirectCompetitor": true },
+      { "name": "PocketGuard", "description": "Budget tracking tool that calculates spendable cash after accounting for bills and savings goals.", "isDirectCompetitor": true }
+    ]
+  },
+  {
+    "id": "idea-04",
+    "domain": "FinTech",
+    "name": "QuantumVault Custody",
+    "description": "Post-quantum cryptographic key management and cold-storage custody hardware for institutional cryptocurrency funds.",
+    "groundTruthCrowdedness": "Emerging",
+    "expectedTopCompetitor": "QANplatform",
+    "competitors": [
+      { "name": "QANplatform", "description": "Quantum-resistant layer-1 hybrid blockchain platform with post-quantum smart contracts.", "isDirectCompetitor": true },
+      { "name": "Fireblocks", "description": "Enterprise digital asset custody and MPC wallet infrastructure for financial institutions.", "isDirectCompetitor": false },
+      { "name": "Anchorage Digital", "description": "Regulated crypto bank providing institutional custody and staking services.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-05",
+    "domain": "EdTech",
+    "name": "CardMaster AI",
+    "description": "AI study tool that automatically turns lecture slides and textbook PDFs into active recall flashcards with spaced repetition.",
+    "groundTruthCrowdedness": "Highly Crowded",
+    "expectedTopCompetitor": "Quizlet",
+    "competitors": [
+      { "name": "Quizlet", "description": "Digital flashcards, study guides, and interactive practice tests powered by user-generated and AI study tools.", "isDirectCompetitor": true },
+      { "name": "Anki", "description": "Open-source spaced repetition flashcard software for long-term knowledge retention and memorization.", "isDirectCompetitor": true },
+      { "name": "Brainscape", "description": "Confidence-based adaptive flashcard platform for medical, bar exam, and foreign language learning.", "isDirectCompetitor": true },
+      { "name": "Gizmo AI", "description": "AI flashcard and study companion that turns notes and YouTube videos into interactive quizzes.", "isDirectCompetitor": true },
+      { "name": "Knowt", "description": "Free study platform with flashcards, practice exams, and automated note-to-quiz conversions.", "isDirectCompetitor": true }
+    ]
+  },
+  {
+    "id": "idea-06",
+    "domain": "EdTech",
+    "name": "SocraticIDE",
+    "description": "Interactive IDE extension that analyzes student compilation errors and provides guiding Socratic debugging questions without revealing the answer.",
+    "groundTruthCrowdedness": "Moderately Contested",
+    "expectedTopCompetitor": "Replit Ghostwriter",
+    "competitors": [
+      { "name": "Replit Ghostwriter", "description": "In-browser AI coding assistant that explains code errors and provides interactive debugging help.", "isDirectCompetitor": true },
+      { "name": "Codecademy Practice Portal", "description": "Interactive browser coding environment with hints and automated test check validations.", "isDirectCompetitor": true },
+      { "name": "GitHub Copilot", "description": "AI pair programmer that provides autocomplete code generation directly inside the code editor.", "isDirectCompetitor": false },
+      { "name": "Kite", "description": "Legacy AI code autocompletion engine for Python and JavaScript developers.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-07",
+    "domain": "EdTech",
+    "name": "EquineVet VR Simulator",
+    "description": "Haptic feedback virtual reality simulation station for veterinary surgery students practicing equine colic abdominal procedures.",
+    "groundTruthCrowdedness": "Emerging",
+    "expectedTopCompetitor": "VetMedTeam VR",
+    "competitors": [
+      { "name": "VetMedTeam VR", "description": "VR modules for veterinary anatomy and basic animal care training.", "isDirectCompetitor": true },
+      { "name": "Osso VR", "description": "Virtual reality surgical training platform designed for human orthopedic and cardiology surgeons.", "isDirectCompetitor": false },
+      { "name": "Precision OS", "description": "Immersive medical software for orthopedic surgical simulation and human residency education.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-08",
+    "domain": "EdTech",
+    "name": "LinguaStep Spaced Tutor",
+    "description": "Gamified mobile language learning application with bite-sized vocabulary lessons, speech recognition pronunciation scoring, and streaks.",
+    "groundTruthCrowdedness": "Highly Crowded",
+    "expectedTopCompetitor": "Duolingo",
+    "competitors": [
+      { "name": "Duolingo", "description": "Gamified language learning app with bite-sized lessons, streaks, leaderboard competitions, and speech audio scoring.", "isDirectCompetitor": true },
+      { "name": "Babbel", "description": "Subscription-based language learning app focused on practical conversational dialogues and grammar explanations.", "isDirectCompetitor": true },
+      { "name": "Busuu", "description": "Language learning community featuring native speaker feedback and structured CEFR level courses.", "isDirectCompetitor": true },
+      { "name": "Memrise", "description": "Language learning app using spaced repetition, video clips of native speakers, and conversational bots.", "isDirectCompetitor": true },
+      { "name": "Rosetta Stone", "description": "Pioneering language learning software employing full immersion and visual association methodology.", "isDirectCompetitor": true }
+    ]
+  },
+  {
+    "id": "idea-09",
+    "domain": "HealthTech",
+    "name": "TeleDoc Direct",
+    "description": "On-demand virtual doctor consultation and telehealth appointments booking mobile app with electronic prescription delivery.",
+    "groundTruthCrowdedness": "Highly Crowded",
+    "expectedTopCompetitor": "Teladoc",
+    "competitors": [
+      { "name": "Teladoc", "description": "Multinational telemedicine and virtual healthcare company providing 24/7 doctor video appointments.", "isDirectCompetitor": true },
+      { "name": "Zocdoc", "description": "Online medical care appointment booking service connecting patients with in-network doctors and clinics.", "isDirectCompetitor": true },
+      { "name": "Amwell", "description": "Digital care delivery platform enabling virtual visits, remote patient monitoring, and hospital telehealth.", "isDirectCompetitor": true },
+      { "name": "MDLive", "description": "Telehealth provider offering 24/7 access to board-certified doctors, dermatologists, and therapists.", "isDirectCompetitor": true },
+      { "name": "PlushCare", "description": "Virtual primary care and mental health clinic with direct-to-pharmacy digital prescriptions.", "isDirectCompetitor": true }
+    ]
+  },
+  {
+    "id": "idea-10",
+    "domain": "HealthTech",
+    "name": "SepsisPulse Monitor",
+    "description": "Bedside ICU machine learning monitor that fuses respiratory acoustics, arterial line waveforms, and lactate trends to predict septic shock 4 hours early.",
+    "groundTruthCrowdedness": "Moderately Contested",
+    "expectedTopCompetitor": "Prenosis",
+    "competitors": [
+      { "name": "Prenosis", "description": "FDA-authorized AI diagnostic tool that predicts sepsis onset by analyzing multi-biomarker hospital data.", "isDirectCompetitor": true },
+      { "name": "Dasanet Sepsis Watch", "description": "Clinical decision support software predicting sepsis progression inside emergency departments.", "isDirectCompetitor": true },
+      { "name": "Epic Sepsis Model", "description": "Proprietary EHR scoring algorithm calculating proprietary inpatient sepsis risk scores.", "isDirectCompetitor": true },
+      { "name": "Cerner HealtheAnalytics", "description": "Population health and hospital reporting dashboard for readmission tracking.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-11",
+    "domain": "HealthTech",
+    "name": "SweatGlucose Biosensor",
+    "description": "Non-invasive wearable adhesive patch that continuously measures interstitial glucose through micro-fluidic sweat analysis without needle punctures.",
+    "groundTruthCrowdedness": "Emerging",
+    "expectedTopCompetitor": "PKvitality",
+    "competitors": [
+      { "name": "PKvitality", "description": "K'Watch Glucose smartwatch sensor tracking glucose continuously through skin micro-points.", "isDirectCompetitor": true },
+      { "name": "Dexcom G7", "description": "Subcutaneous needle sensor continuous glucose monitor (CGM) communicating with mobile apps.", "isDirectCompetitor": false },
+      { "name": "Abbott FreeStyle Libre", "description": "Factory-calibrated small subcutaneous filament sensor measuring interstitial fluid glucose.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-12",
+    "domain": "HealthTech",
+    "name": "MedRecord EHR Suite",
+    "description": "Cloud-based electronic health record (EHR) and practice management system for ambulatory medical clinics and private physician offices.",
+    "groundTruthCrowdedness": "Highly Crowded",
+    "expectedTopCompetitor": "Athenahealth",
+    "competitors": [
+      { "name": "Athenahealth", "description": "Cloud EHR, medical billing, and patient engagement platform for independent medical practices.", "isDirectCompetitor": true },
+      { "name": "Kareo", "description": "Cloud-based medical software for independent clinics covering EHR, billing, and scheduling.", "isDirectCompetitor": true },
+      { "name": "DrChrono", "description": "iPad and web-based EHR, medical billing, and practice management platform for doctors.", "isDirectCompetitor": true },
+      { "name": "NextGen Healthcare", "description": "Electronic health records and practice management software for ambulatory healthcare.", "isDirectCompetitor": true },
+      { "name": "eClinicalWorks", "description": "Comprehensive EHR and practice management software utilized by outpatient clinics.", "isDirectCompetitor": true }
+    ]
+  },
+  {
+    "id": "idea-13",
+    "domain": "Developer Tools",
+    "name": "AutoCode Companion",
+    "description": "AI-powered code completion and intelligent inline code generation extension for VS Code supporting multiple programming languages.",
+    "groundTruthCrowdedness": "Highly Crowded",
+    "expectedTopCompetitor": "GitHub Copilot",
+    "competitors": [
+      { "name": "GitHub Copilot", "description": "AI pair programmer offering real-time inline code completions, multi-file suggestions, and conversational chat.", "isDirectCompetitor": true },
+      { "name": "Cursor", "description": "AI-first code editor fork with built-in multi-line editing, codebase indexing, and conversational terminal.", "isDirectCompetitor": true },
+      { "name": "Codeium", "description": "Free and enterprise AI code completion and chat extension for multiple IDEs and languages.", "isDirectCompetitor": true },
+      { "name": "Tabnine", "description": "Privacy-focused AI code completion tool running locally or in self-hosted enterprise clouds.", "isDirectCompetitor": true },
+      { "name": "Amazon Q Developer", "description": "AWS generative AI coding assistant for code generation, vulnerability scanning, and upgrades.", "isDirectCompetitor": true }
+    ]
+  },
+  {
+    "id": "idea-14",
+    "domain": "Developer Tools",
+    "name": "EdgeSQLite Consensus",
+    "description": "Raft-consensus distributed replicated SQLite engine running entirely within WebAssembly runtimes for edge browser workers.",
+    "groundTruthCrowdedness": "Emerging",
+    "expectedTopCompetitor": "Turso",
+    "competitors": [
+      { "name": "Turso", "description": "Distributed database powered by libSQL, offering low latency SQLite replication at the edge.", "isDirectCompetitor": true },
+      { "name": "LiteFS", "description": "Distributed file system that transparently replicates SQLite databases across a cluster of machines.", "isDirectCompetitor": true },
+      { "name": "Supabase", "description": "Backend as a service built on top of Postgres with auth, realtime, and storage.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-15",
+    "domain": "Developer Tools",
+    "name": "GitVisual Desktop",
+    "description": "Visual desktop GUI client for Git version control featuring interactive commit tree visualizations and merge conflict resolution.",
+    "groundTruthCrowdedness": "Highly Crowded",
+    "expectedTopCompetitor": "GitKraken",
+    "competitors": [
+      { "name": "GitKraken", "description": "Desktop Git client with graphical commit graphs, built-in merge tools, and team collaboration.", "isDirectCompetitor": true },
+      { "name": "SourceTree", "description": "Free Git GUI client for Windows and Mac by Atlassian simplifying Git repository interactions.", "isDirectCompetitor": true },
+      { "name": "Tower", "description": "Powerful Git client for Mac and Windows with drag-and-drop rebasing and interactive undo.", "isDirectCompetitor": true },
+      { "name": "Fork", "description": "Fast and friendly Git client with interactive rebase, blame view, and merge conflict solver.", "isDirectCompetitor": true },
+      { "name": "Sublime Merge", "description": "Snappy Git client by Sublime HQ featuring high-performance diffs and syntax-highlighted staging.", "isDirectCompetitor": true }
+    ]
+  },
+  {
+    "id": "idea-16",
+    "domain": "Developer Tools",
+    "name": "KernelGuard eBPF",
+    "description": "Dynamic Linux kernel packet security firewall using in-kernel eBPF bytecode programs for container network defense.",
+    "groundTruthCrowdedness": "Moderately Contested",
+    "expectedTopCompetitor": "Cilium",
+    "competitors": [
+      { "name": "Cilium", "description": "Open-source eBPF-based networking, security, and observability software for cloud-native Kubernetes.", "isDirectCompetitor": true },
+      { "name": "Tetragon", "description": "eBPF-based security observability and runtime enforcement tool detecting kernel-level threats.", "isDirectCompetitor": true },
+      { "name": "Falco", "description": "Cloud-native runtime security tool detecting anomalous application activity via kernel events.", "isDirectCompetitor": true },
+      { "name": "Datadog", "description": "Monitoring and security platform for cloud applications and infrastructure metrics.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-17",
+    "domain": "Cybersecurity",
+    "name": "PhishShield Simulator",
+    "description": "Corporate employee cybersecurity awareness platform that automates simulated spear-phishing campaigns and tracks click rates.",
+    "groundTruthCrowdedness": "Highly Crowded",
+    "expectedTopCompetitor": "KnowBe4",
+    "competitors": [
+      { "name": "KnowBe4", "description": "World's largest security awareness training and simulated phishing platform with rich scenario templates.", "isDirectCompetitor": true },
+      { "name": "Proofpoint Security Awareness", "description": "Security training platform combining threat intelligence with adaptive simulated phishing attacks.", "isDirectCompetitor": true },
+      { "name": "Infosec IQ", "description": "Security education and automated phishing simulation software empowering employees against cybercrime.", "isDirectCompetitor": true },
+      { "name": "Hoxhunt", "description": "Gamified security awareness training platform rewarding employees for reporting simulated and real attacks.", "isDirectCompetitor": true },
+      { "name": "Cofense PhishMe", "description": "Phishing simulation and employee conditioning solution designed to identify vulnerable users.", "isDirectCompetitor": true }
+    ]
+  },
+  {
+    "id": "idea-18",
+    "domain": "Cybersecurity",
+    "name": "HardenedC Compiler",
+    "description": "Hardware-enforced capability-based memory safety compiler and runtime preventing buffer overflow vulnerabilities in legacy C/C++ codebases.",
+    "groundTruthCrowdedness": "Emerging",
+    "expectedTopCompetitor": "CHERI LLVM",
+    "competitors": [
+      { "name": "CHERI LLVM", "description": "Research compiler extending hardware architecture with capability-based pointers for spatial memory safety.", "isDirectCompetitor": true },
+      { "name": "Rust Toolchain", "description": "Systems programming language with compile-time borrow checker ensuring memory safety.", "isDirectCompetitor": false },
+      { "name": "AddressSanitizer", "description": "Memory error detector tool integrated into GCC and Clang for testing environments.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-19",
+    "domain": "Cybersecurity",
+    "name": "KeyPass Safe",
+    "description": "Cross-platform password manager offering zero-knowledge encrypted vault storage, password generation, and browser autofill.",
+    "groundTruthCrowdedness": "Highly Crowded",
+    "expectedTopCompetitor": "1Password",
+    "competitors": [
+      { "name": "1Password", "description": "Password manager providing secure credential storage, two-factor authentication, and family vaults.", "isDirectCompetitor": true },
+      { "name": "Bitwarden", "description": "Open-source password management solution for individuals, teams, and business organizations.", "isDirectCompetitor": true },
+      { "name": "Dashlane", "description": "Password manager and digital wallet with breach monitoring, dark web alerts, and built-in VPN.", "isDirectCompetitor": true },
+      { "name": "NordPass", "description": "Proprietary password manager employing XChaCha20 encryption with biometric unlock features.", "isDirectCompetitor": true },
+      { "name": "LastPass", "description": "Cloud-based password management service storing encrypted credentials across mobile and desktop devices.", "isDirectCompetitor": true }
+    ]
+  },
+  {
+    "id": "idea-20",
+    "domain": "Cybersecurity",
+    "name": "VoiceAuth Deepfake Shield",
+    "description": "Real-time acoustic spectral analysis engine detecting synthetic AI voice clones during banking customer verification calls.",
+    "groundTruthCrowdedness": "Moderately Contested",
+    "expectedTopCompetitor": "Pindrop",
+    "competitors": [
+      { "name": "Pindrop", "description": "Voice authentication and call center fraud detection platform analyzing audio acoustics.", "isDirectCompetitor": true },
+      { "name": "ValidSoft", "description": "Voice biometric authentication and synthetic voice detection software for enterprise security.", "isDirectCompetitor": true },
+      { "name": "Nuance Gatekeeper", "description": "Biometric security solution verifying customer voiceprints and detecting recorded playback.", "isDirectCompetitor": true },
+      { "name": "Twilio", "description": "Cloud communications platform providing APIs for voice calling, messaging, and video.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-21",
+    "domain": "Productivity",
+    "name": "ThoughtGraph Notes",
+    "description": "Local-first Markdown note-taking desktop application with bidirectional page linking, graph visualization, and offline sync.",
+    "groundTruthCrowdedness": "Highly Crowded",
+    "expectedTopCompetitor": "Obsidian",
+    "competitors": [
+      { "name": "Obsidian", "description": "Extensible knowledge base operating on local plain-text Markdown files with interactive graph view.", "isDirectCompetitor": true },
+      { "name": "Roam Research", "description": "Note-taking tool for networked thought utilizing bidirectional links and daily block references.", "isDirectCompetitor": true },
+      { "name": "Logseq", "description": "Open-source, local-first platform for knowledge sharing and management with outline blocks.", "isDirectCompetitor": true },
+      { "name": "Notion", "description": "Connected workspace for notes, docs, task management, and relational databases.", "isDirectCompetitor": false },
+      { "name": "Bear", "description": "Markdown writing and note-taking app designed for macOS and iOS with tagging support.", "isDirectCompetitor": true }
+    ]
+  },
+  {
+    "id": "idea-22",
+    "domain": "Productivity",
+    "name": "MeetingScribe AI",
+    "description": "Meeting bot that joins Zoom and Google Meet calls, records audio, generates live transcripts, and outputs automated meeting summaries.",
+    "groundTruthCrowdedness": "Highly Crowded",
+    "expectedTopCompetitor": "Otter.ai",
+    "competitors": [
+      { "name": "Otter.ai", "description": "AI meeting assistant that records audio, writes notes, captures slides, and generates summary takeaways.", "isDirectCompetitor": true },
+      { "name": "Fireflies.ai", "description": "AI voice assistant that joins conference calls to transcribe, summarize, and search voice conversations.", "isDirectCompetitor": true },
+      { "name": "Fathom", "description": "Free AI meeting recorder and transcribing bot for Zoom, Teams, and Google Meet.", "isDirectCompetitor": true },
+      { "name": "tl;dv", "description": "AI meeting recorder and summarizer for Google Meet and Zoom with video clip sharing.", "isDirectCompetitor": true },
+      { "name": "Krisp", "description": "AI noise cancellation and meeting transcription application running on local audio devices.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-23",
+    "domain": "Productivity",
+    "name": "CircadianTask Sync",
+    "description": "Calendar app that synchronizes task deadlines and focused work sessions with personal wearable cortisol and sleep stage biorhythms.",
+    "groundTruthCrowdedness": "Emerging",
+    "expectedTopCompetitor": "Rise Science",
+    "competitors": [
+      { "name": "Rise Science", "description": "Sleep tracker and energy schedule app calculating sleep debt and circadian energy peaks.", "isDirectCompetitor": true },
+      { "name": "Oura Ring App", "description": "Wearable wellness companion tracking sleep readiness, heart rate, and body temperature.", "isDirectCompetitor": false },
+      { "name": "Todoist", "description": "Task management and to-do list app organizing personal productivity and work projects.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-24",
+    "domain": "Productivity",
+    "name": "FocusInterval Timer",
+    "description": "Simple 25-minute Pomodoro desktop timer application with custom break durations, ticking audio effects, and session history.",
+    "groundTruthCrowdedness": "Highly Crowded",
+    "expectedTopCompetitor": "Forest",
+    "competitors": [
+      { "name": "Forest", "description": "Gamified productivity app where users plant virtual trees by staying focused away from their phone.", "isDirectCompetitor": true },
+      { "name": "Be Focused", "description": "Pomodoro timer and task manager tracking work intervals and break goals on iOS and macOS.", "isDirectCompetitor": true },
+      { "name": "Pomodone", "description": "Pomodoro timer app integrating with Trello, Asana, and Todoist for timed task sprints.", "isDirectCompetitor": true },
+      { "name": "Pomofocus", "description": "Simple web-based Pomodoro timer offering customizable intervals and sound notifications.", "isDirectCompetitor": true },
+      { "name": "Focus Keeper", "description": "Minimalist Pomodoro work session timer tracking focused minutes and target streaks.", "isDirectCompetitor": true }
+    ]
+  },
+  {
+    "id": "idea-25",
+    "domain": "E-commerce",
+    "name": "DropShip Hub",
+    "description": "E-commerce platform for launching dropshipping online storefronts with automated supplier order fulfillment and inventory sync.",
+    "groundTruthCrowdedness": "Highly Crowded",
+    "expectedTopCompetitor": "Shopify",
+    "competitors": [
+      { "name": "Shopify", "description": "Commerce platform allowing merchants to build, customize, and manage online stores with thousands of dropshipping apps.", "isDirectCompetitor": true },
+      { "name": "WooCommerce", "description": "Open-source e-commerce plugin built for WordPress sites supporting dropshipping extensions.", "isDirectCompetitor": true },
+      { "name": "BigCommerce", "description": "SaaS e-commerce platform offering online store management, hosting, and checkout tools.", "isDirectCompetitor": true },
+      { "name": "Spocket", "description": "Dropshipping marketplace connecting online stores with US and EU fast-shipping suppliers.", "isDirectCompetitor": true },
+      { "name": "DSers", "description": "AliExpress official dropshipping partner tool for processing and placing bulk supplier orders.", "isDirectCompetitor": true }
+    ]
+  },
+  {
+    "id": "idea-26",
+    "domain": "E-commerce",
+    "name": "LuxeOptic 3D TryOn",
+    "description": "Browser-based WebGL augmented reality 3D face mesh engine for luxury eyewear brands to provide photorealistic virtual try-on.",
+    "groundTruthCrowdedness": "Moderately Contested",
+    "expectedTopCompetitor": "FittingBox",
+    "competitors": [
+      { "name": "FittingBox", "description": "Virtual try-on solution and 3D digital frame digitization for optical and eyewear brands.", "isDirectCompetitor": true },
+      { "name": "Ditto Technologies", "description": "Digital eyewear try-on platform creating precise 3D face models for frame fitting.", "isDirectCompetitor": true },
+      { "name": "YouCam Makeup", "description": "AR beauty camera app providing virtual makeup and cosmetic simulation for consumers.", "isDirectCompetitor": false },
+      { "name": "Shopify AR", "description": "Native 3D model viewer embedded into Shopify product pages for web browsers.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-27",
+    "domain": "E-commerce",
+    "name": "BookValuate AI",
+    "description": "Computer vision mobile tool for used bookstores that photographs spine condition and edition details to price rare books competitively.",
+    "groundTruthCrowdedness": "Emerging",
+    "expectedTopCompetitor": "ScoutIQ",
+    "competitors": [
+      { "name": "ScoutIQ", "description": "Book scouting app scanning barcodes to calculate Amazon FBA profit margins and velocity.", "isDirectCompetitor": true },
+      { "name": "BookScouter", "description": "Book price comparison platform comparing buyback vendors based on ISBN barcode lookups.", "isDirectCompetitor": true },
+      { "name": "AbeBooks", "description": "Online marketplace for rare, vintage, and out-of-print collectible books.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-28",
+    "domain": "E-commerce",
+    "name": "ReviewCollector Pro",
+    "description": "SaaS widget for Shopify stores that sends automated post-purchase SMS review request links and displays star ratings.",
+    "groundTruthCrowdedness": "Highly Crowded",
+    "expectedTopCompetitor": "Yotpo",
+    "competitors": [
+      { "name": "Yotpo", "description": "E-commerce marketing platform for customer reviews, visual user-generated content, loyalty, and SMS.", "isDirectCompetitor": true },
+      { "name": "Judge.me", "description": "Fast-loading product review app for e-commerce stores collecting photo and video testimonials.", "isDirectCompetitor": true },
+      { "name": "Loox", "description": "Social proof and product review app sending automated review emails with photo incentives.", "isDirectCompetitor": true },
+      { "name": "Trustpilot", "description": "Consumer review website open to any business with public customer feedback profiles.", "isDirectCompetitor": true },
+      { "name": "Okendo", "description": "Customer marketing platform collecting high-impact ratings, reviews, and zero-party customer data.", "isDirectCompetitor": true }
+    ]
+  },
+  {
+    "id": "idea-29",
+    "domain": "Logistics",
+    "name": "RouteSprint Optimizer",
+    "description": "Fleet dispatch software that solves the traveling salesperson problem to generate optimal multi-stop delivery routes for couriers.",
+    "groundTruthCrowdedness": "Highly Crowded",
+    "expectedTopCompetitor": "Onfleet",
+    "competitors": [
+      { "name": "Onfleet", "description": "Last-mile delivery management software featuring routing, real-time driver tracking, and proof of delivery.", "isDirectCompetitor": true },
+      { "name": "Routific", "description": "Route optimization and delivery management platform for local delivery businesses and fleets.", "isDirectCompetitor": true },
+      { "name": "Circuit for Teams", "description": "Routing software optimizing delivery routes and dispatching turn-by-turn directions to drivers.", "isDirectCompetitor": true },
+      { "name": "OptimoRoute", "description": "Automated route planning and scheduling software for service businesses and delivery couriers.", "isDirectCompetitor": true },
+      { "name": "Route4Me", "description": "Route sequencing and optimization engine calculating shortest delivery paths for commercial drivers.", "isDirectCompetitor": true }
+    ]
+  },
+  {
+    "id": "idea-30",
+    "domain": "Logistics",
+    "name": "AeroShip ShoreDrone",
+    "description": "Autonomous heavy-lift drone delivery service ferrying critical vessel parts and medical packages from port to anchored offshore cargo ships.",
+    "groundTruthCrowdedness": "Emerging",
+    "expectedTopCompetitor": "F-drones",
+    "competitors": [
+      { "name": "F-drones", "description": "Autonomous maritime drone delivery company servicing commercial ships and offshore installations in Singapore.", "isDirectCompetitor": true },
+      { "name": "Skyports Drone Services", "description": "Drone delivery operator transporting urgent medical cargo across islands and rural areas.", "isDirectCompetitor": false },
+      { "name": "Wing", "description": "Alphabet commercial drone delivery subsidiary delivering food and retail goods to suburban homes.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-31",
+    "domain": "Logistics",
+    "name": "BioTemp ColdSense",
+    "description": "Cellular IoT temperature logger tag with cryptographic tamper detection for monitoring clinical vaccine trial transport.",
+    "groundTruthCrowdedness": "Moderately Contested",
+    "expectedTopCompetitor": "Sensitech",
+    "competitors": [
+      { "name": "Sensitech", "description": "Cold chain monitoring solutions and temperature data loggers for life sciences and pharmaceuticals.", "isDirectCompetitor": true },
+      { "name": "Controlant", "description": "Real-time visibility platform for pharmaceutical supply chains with automated temperature monitoring.", "isDirectCompetitor": true },
+      { "name": "Elpro", "description": "Environmental monitoring sensors and cloud software for healthcare and pharmaceutical storage.", "isDirectCompetitor": true },
+      { "name": "Tive", "description": "Supply chain visibility trackers monitoring location, temperature, humidity, and shock in transit.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-32",
+    "domain": "Logistics",
+    "name": "GlobalFreight Exchange",
+    "description": "Digital freight forwarding platform providing instant ocean container booking, customs clearance, and vessel tracking.",
+    "groundTruthCrowdedness": "Highly Crowded",
+    "expectedTopCompetitor": "Flexport",
+    "competitors": [
+      { "name": "Flexport", "description": "Full-service digital freight forwarder managing ocean, air, and customs logistics on a cloud platform.", "isDirectCompetitor": true },
+      { "name": "Freightos", "description": "Online booking marketplace for international freight quotes, instant spot rates, and shipments.", "isDirectCompetitor": true },
+      { "name": "Forto", "description": "Digital freight forwarder offering green logistics and supply chain visibility for European shippers.", "isDirectCompetitor": true },
+      { "name": "Kuehne+Nagel Seaexplorer", "description": "Global freight logistics giant providing sea container route schedules and carbon tracking.", "isDirectCompetitor": true },
+      { "name": "Sennder", "description": "European digital road freight forwarder connecting commercial shippers with enterprise trucking fleets.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-33",
+    "domain": "ClimateTech",
+    "name": "CarbonScope Audit",
+    "description": "Enterprise carbon accounting software that calculates corporate Scope 1, 2, and 3 supply chain greenhouse gas emissions for ESG reporting.",
+    "groundTruthCrowdedness": "Highly Crowded",
+    "expectedTopCompetitor": "Watershed",
+    "competitors": [
+      { "name": "Watershed", "description": "Enterprise climate platform measuring carbon emissions, tracking reductions, and generating regulatory reports.", "isDirectCompetitor": true },
+      { "name": "Persefoni", "description": "Climate management and accounting platform helping enterprises calculate carbon footprints for compliance.", "isDirectCompetitor": true },
+      { "name": "Sweep", "description": "Carbon management and ESG data software helping businesses track and reduce supply chain emissions.", "isDirectCompetitor": true },
+      { "name": "Sinai Technologies", "description": "Decarbonization software calculating marginal abatement cost curves and net-zero roadmaps.", "isDirectCompetitor": true },
+      { "name": "Normative", "description": "Carbon accounting engine analyzing corporate financial transactions to measure supply chain carbon.", "isDirectCompetitor": true }
+    ]
+  },
+  {
+    "id": "idea-34",
+    "domain": "ClimateTech",
+    "name": "SilicateWeather DAC",
+    "description": "Direct air carbon dioxide removal facility utilizing accelerated weathering of crushed basalt and olivine silicate minerals.",
+    "groundTruthCrowdedness": "Emerging",
+    "expectedTopCompetitor": "Heirloom",
+    "competitors": [
+      { "name": "Heirloom", "description": "Direct air capture technology using limestone mineral looping to capture carbon dioxide from ambient air.", "isDirectCompetitor": true },
+      { "name": "Climeworks", "description": "Direct air capture company filtering CO2 from ambient air using fans and geothermal underground storage.", "isDirectCompetitor": false },
+      { "name": "Charm Industrial", "description": "Carbon removal company converting agricultural biomass waste into bio-oil pumped into geologic wells.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-35",
+    "domain": "ClimateTech",
+    "name": "SmartPlug CircuitSense",
+    "description": "High-frequency electrical current sensor clamped to home electrical panels that disaggregates appliance wattage via machine learning.",
+    "groundTruthCrowdedness": "Moderately Contested",
+    "expectedTopCompetitor": "Sense",
+    "competitors": [
+      { "name": "Sense", "description": "Home energy monitor installed in the electrical breaker box detecting appliance energy signatures.", "isDirectCompetitor": true },
+      { "name": "Emporia Energy Vue", "description": "Home energy management system with individual circuit branch CT clamps and app monitoring.", "isDirectCompetitor": true },
+      { "name": "Wiser Energy", "description": "Square D smart home electrical panel monitor tracking energy usage and appliance activity.", "isDirectCompetitor": true },
+      { "name": "Ecobee", "description": "Smart thermostat device controlling residential HVAC heating and cooling efficiency.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-36",
+    "domain": "ClimateTech",
+    "name": "RadarForest Verifier",
+    "description": "Synthetic Aperture Radar (SAR) satellite analytics platform detecting illegal tropical deforestation beneath cloud cover for carbon offsets.",
+    "groundTruthCrowdedness": "Moderately Contested",
+    "expectedTopCompetitor": "Pachama",
+    "competitors": [
+      { "name": "Pachama", "description": "Carbon credit marketplace utilizing satellite remote sensing and lidar to verify forest carbon projects.", "isDirectCompetitor": true },
+      { "name": "Sylvera", "description": "Carbon credit ratings agency combining satellite data and machine learning to score project quality.", "isDirectCompetitor": true },
+      { "name": "Planet Labs", "description": "Earth observation company operating nanosatellite constellations capturing daily global optical imagery.", "isDirectCompetitor": false },
+      { "name": "Space4Good", "description": "Geospatial social enterprise using satellite earth observation to monitor conservation areas.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-37",
+    "domain": "Agriculture",
+    "name": "AeroCrop NDVI Drone",
+    "description": "Multispectral drone camera package and aerial mapping cloud software calculating NDVI crop health maps for precision fertilizer spray.",
+    "groundTruthCrowdedness": "Highly Crowded",
+    "expectedTopCompetitor": "DJI Agriculture",
+    "competitors": [
+      { "name": "DJI Agriculture", "description": "Commercial agricultural drones equipped with multispectral sensors and automated crop spraying tanks.", "isDirectCompetitor": true },
+      { "name": "Sentera", "description": "Agricultural remote sensing company offering drone sensors and field analytics software.", "isDirectCompetitor": true },
+      { "name": "PrecisionHawk", "description": "Commercial drone technology provider for agricultural field surveys and aerial mapping.", "isDirectCompetitor": true },
+      { "name": "Pix4Dfields", "description": "Agricultural drone mapping software for in-field crop analysis and aerial vegetation indices.", "isDirectCompetitor": true },
+      { "name": "MicaSense", "description": "Multispectral sensors designed for agricultural drones measuring plant vitality and moisture.", "isDirectCompetitor": true }
+    ]
+  },
+  {
+    "id": "idea-38",
+    "domain": "Agriculture",
+    "name": "AppleHarvest Bot",
+    "description": "Autonomous robotic wheeled orchard harvester utilizing stereo depth cameras and gentle pneumatic silicone grippers to pick ripe apples.",
+    "groundTruthCrowdedness": "Emerging",
+    "expectedTopCompetitor": "Tevel Aerobotics",
+    "competitors": [
+      { "name": "Tevel Aerobotics", "description": "Flying autonomous harvesting robots tethered to a base platform that pick fruit in commercial orchards.", "isDirectCompetitor": true },
+      { "name": "Abundant Robotics", "description": "Robotics venture developing automated fruit harvesting machines with vacuum suction.", "isDirectCompetitor": true },
+      { "name": "John Deere", "description": "Agricultural machinery manufacturer building combines, tractors, and automated grain harvesters.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-39",
+    "domain": "Agriculture",
+    "name": "MoistSense SMS",
+    "description": "Ruggedized solar-powered capacitive soil probe transmitting irrigation timing recommendations to smallholder farmers via 2G SMS.",
+    "groundTruthCrowdedness": "Moderately Contested",
+    "expectedTopCompetitor": "CropX",
+    "competitors": [
+      { "name": "CropX", "description": "Agronomic farm management system using soil sensors, satellite imagery, and automated irrigation maps.", "isDirectCompetitor": true },
+      { "name": "Arable", "description": "In-field weather station and crop sensor measuring rainfall, canopy temperature, and chlorophyll.", "isDirectCompetitor": true },
+      { "name": "Tule Technologies", "description": "Evapotranspiration sensors measuring actual crop water use for commercial vineyards and orchards.", "isDirectCompetitor": true },
+      { "name": "Davis Instruments", "description": "Weather monitoring stations and environmental sensors for agricultural and home use.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-40",
+    "domain": "Agriculture",
+    "name": "MealwormMatrix AutoFarm",
+    "description": "Vertical modular climate-controlled farming racking system automating feeding, sifting, and harvesting of mealworm insect protein for pet feed.",
+    "groundTruthCrowdedness": "Emerging",
+    "expectedTopCompetitor": "Ynsect",
+    "competitors": [
+      { "name": "Ynsect", "description": "Global producer of insect protein breeding mealworms in automated vertical farms for animal and plant nutrition.", "isDirectCompetitor": true },
+      { "name": "InnovaFeed", "description": "Biotech company producing black soldier fly insect protein and oil for aquaculture and pet food.", "isDirectCompetitor": false },
+      { "name": "Protix", "description": "Insect farming company producing animal feed ingredients from black soldier fly larvae.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-41",
+    "domain": "Accessibility",
+    "name": "WebSpeech ScreenReader",
+    "description": "Browser extension screen reader that converts web page DOM hierarchy and text into synthesized audio narration for visually impaired users.",
+    "groundTruthCrowdedness": "Moderately Contested",
+    "expectedTopCompetitor": "JAWS",
+    "competitors": [
+      { "name": "JAWS", "description": "Industry standard screen reader for Windows helping blind individuals navigate PC software and websites.", "isDirectCompetitor": true },
+      { "name": "NVDA", "description": "Free open-source screen reader for Windows providing synthetic speech feedback for web browsing.", "isDirectCompetitor": true },
+      { "name": "VoiceOver", "description": "Built-in screen reader across Apple devices allowing navigation through gestures and spoken cues.", "isDirectCompetitor": true },
+      { "name": "Grammarly", "description": "Writing assistant tool providing grammar suggestions, spelling checks, and clarity recommendations.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-42",
+    "domain": "Accessibility",
+    "name": "SignSpeak Glove",
+    "description": "Flex-sensor electronic glove that detects American Sign Language fingerspelling gestures and translates them to vocalized speech via Bluetooth.",
+    "groundTruthCrowdedness": "Emerging",
+    "expectedTopCompetitor": "BrightSign Glove",
+    "competitors": [
+      { "name": "BrightSign Glove", "description": "Smart glove that translates sign language hand gestures into spoken voice in real time.", "isDirectCompetitor": true },
+      { "name": "SignAll", "description": "Camera-based AI system translating sign language into grammatically correct text.", "isDirectCompetitor": true },
+      { "name": "Google Live Transcribe", "description": "Android application providing real-time speech-to-text transcription for deaf individuals.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-43",
+    "domain": "Accessibility",
+    "name": "ColorContrast Auditing Plugin",
+    "description": "Figma and web development plugin that inspects UI elements for WCAG 2.1 AA/AAA color contrast ratios and simulates color blindness.",
+    "groundTruthCrowdedness": "Moderately Contested",
+    "expectedTopCompetitor": "Stark",
+    "competitors": [
+      { "name": "Stark", "description": "Accessibility design suite for Figma and browsers with contrast checkers and vision simulators.", "isDirectCompetitor": true },
+      { "name": "Axe by Deque", "description": "Automated digital accessibility testing engine finding WCAG violations in web applications.", "isDirectCompetitor": true },
+      { "name": "Color Oracle", "description": "Free color blindness simulator for Windows and Mac applying full-screen visual filters.", "isDirectCompetitor": true },
+      { "name": "Figma", "description": "Collaborative cloud design tool for user interfaces, prototypes, and design systems.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-44",
+    "domain": "Accessibility",
+    "name": "TongueDrive Wheelchair",
+    "description": "Intraoral wireless magnetic sensor plate worn in the palate that allows quadriplegic patients to navigate electric wheelchairs using tongue movements.",
+    "groundTruthCrowdedness": "Emerging",
+    "expectedTopCompetitor": "Tongue Drive System",
+    "competitors": [
+      { "name": "Tongue Drive System", "description": "Academic medical assistive technology enabling users to control computers and wheelchairs with tongue motion.", "isDirectCompetitor": true },
+      { "name": "Permobil Sip-and-Puff", "description": "Pneumatic wheelchair control mechanism operated by inhaling or exhaling into a straw.", "isDirectCompetitor": false },
+      { "name": "Tobii Dynavox", "description": "Eye tracking assistive communication devices allowing navigation through gaze fixation.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-45",
+    "domain": "AI Assistants",
+    "name": "OmniChat Assistant",
+    "description": "General-purpose conversational chatbot interface for answering questions, drafting emails, brainstorming ideas, and chatting with an AI.",
+    "groundTruthCrowdedness": "Highly Crowded",
+    "expectedTopCompetitor": "ChatGPT",
+    "competitors": [
+      { "name": "ChatGPT", "description": "OpenAI conversational AI model capable of generating text, code, analysis, and answering questions.", "isDirectCompetitor": true },
+      { "name": "Claude", "description": "Anthropic AI assistant offering long-context reasoning, coding assistance, and natural dialogue.", "isDirectCompetitor": true },
+      { "name": "Google Gemini", "description": "Multimodal conversational AI model integrated into Google apps and web search.", "isDirectCompetitor": true },
+      { "name": "Microsoft Copilot", "description": "AI companion integrated into Windows, Edge, and Microsoft 365 productivity suites.", "isDirectCompetitor": true },
+      { "name": "Perplexity", "description": "AI conversational search engine delivering cited answers to complex queries in real time.", "isDirectCompetitor": true }
+    ]
+  },
+  {
+    "id": "idea-46",
+    "domain": "AI Assistants",
+    "name": "LexiDeposition AI",
+    "description": "Specialized legal litigation assistant that cross-examines trial deposition transcripts against case evidence files to highlight contradictory testimony.",
+    "groundTruthCrowdedness": "Moderately Contested",
+    "expectedTopCompetitor": "CoCounsel",
+    "competitors": [
+      { "name": "CoCounsel by Casetext", "description": "AI legal assistant performing document review, deposition preparation, and contract analysis.", "isDirectCompetitor": true },
+      { "name": "EvenUp", "description": "Legal tech platform generating demand packages and analyzing medical records for personal injury claims.", "isDirectCompetitor": true },
+      { "name": "Harvey AI", "description": "Enterprise generative AI platform built on legal datasets for tier-one corporate law firms.", "isDirectCompetitor": true },
+      { "name": "LexisNexis", "description": "Comprehensive legal research database indexing court decisions, statutes, and case law.", "isDirectCompetitor": false }
+    ]
+  },
+  {
+    "id": "idea-47",
+    "domain": "Enterprise Software",
+    "name": "SupportDesk Cloud",
+    "description": "Customer support ticketing software for routing incoming support emails, live web chat messages, and tracking resolution SLA times.",
+    "groundTruthCrowdedness": "Highly Crowded",
+    "expectedTopCompetitor": "Zendesk",
+    "competitors": [
+      { "name": "Zendesk", "description": "Customer service software and omnichannel support ticketing system for enterprise companies.", "isDirectCompetitor": true },
+      { "name": "Freshdesk", "description": "Cloud-based customer support software offering ticketing, collaboration, and multi-channel messaging.", "isDirectCompetitor": true },
+      { "name": "Intercom", "description": "Customer communications platform featuring live chat, automated bots, and integrated help desk ticketing.", "isDirectCompetitor": true },
+      { "name": "Help Scout", "description": "Shared inbox and customer service platform built for growing teams and personal support.", "isDirectCompetitor": true },
+      { "name": "Front", "description": "Customer communication hub combining the simplicity of email with the functionality of a CRM and help desk.", "isDirectCompetitor": true }
+    ]
+  },
+  {
+    "id": "idea-48",
+    "domain": "Enterprise Software",
+    "name": "Text2SQL DataBot",
+    "description": "Natural language to SQL database query generator that translates English questions into executable PostgreSQL queries for business analysts.",
+    "groundTruthCrowdedness": "Highly Crowded",
+    "expectedTopCompetitor": "Vanna AI",
+    "competitors": [
+      { "name": "Vanna AI", "description": "Open-source Python RAG framework for SQL generation from natural language questions.", "isDirectCompetitor": true },
+      { "name": "Defog.ai", "description": "Fine-tuned models enabling business users to query their database in natural language.", "isDirectCompetitor": true },
+      { "name": "Wren AI", "description": "Open-source AI-powered data assistant that translates plain English to complex SQL queries.", "isDirectCompetitor": true },
+      { "name": "Chat2DB", "description": "AI-driven database management tool supporting natural language to SQL translation.", "isDirectCompetitor": true },
+      { "name": "Seek AI", "description": "Enterprise generative AI data platform automating ad-hoc SQL query generation for BI teams.", "isDirectCompetitor": true }
+    ]
+  },
+  {
+    "id": "idea-49",
+    "domain": "Space Exploration",
+    "name": "MarsTeleop Protocol",
+    "description": "High-latency interplanetary remote teleoperation protocol using predictive physics simulation for autonomous Martian surface rovers.",
+    "groundTruthCrowdedness": "Insufficient Evidence",
+    "expectedTopCompetitor": null,
+    "competitors": []
+  },
+  {
+    "id": "idea-50",
+    "domain": "Archaeology",
+    "name": "VedicAcoustic Restorer",
+    "description": "Acoustic resonance modeling platform reconstructing ancient palm-leaf Sanskrit recitation reverberations inside historical stone temples.",
+    "groundTruthCrowdedness": "Insufficient Evidence",
+    "expectedTopCompetitor": "TempleSound Project",
+    "competitors": [
+      { "name": "TempleSound Project", "description": "Academic musicology initiative studying resonant frequencies of Dravidian granite pillars.", "isDirectCompetitor": true }
+    ]
+  }
+]
